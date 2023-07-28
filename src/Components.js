@@ -1,16 +1,29 @@
 import './Components.css'
-import { React, useEffect, useRef } from 'react'
+import { React, useState, useEffect, useRef } from 'react'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 import { Link } from 'react-scroll';
+import { motion, AnimatePresence } from "framer-motion";
 
-function NavBar() {    
+function NavBar() {
+    const darkLightModeBtn = useRef(null)
+    // toggle dark light mode
+    const toggleMode = () => {
+        // change color scheme
+        const root = document.getElementById("root")
+        root.classList.toggle("light-mode")
+
+        // switch icon
+        const dark = darkLightModeBtn.current.querySelector(".dark")
+        const light = darkLightModeBtn.current.querySelector(".light")
+        dark.classList.toggle("hide")
+        light.classList.toggle("hide")
+    }
     useEffect(() => {
         // dropdown animation when hamburgerBtn is pressed
         const hamburgerBtn = document.querySelector(".hamburger-btn")
         const dropDownNav = document.querySelector(".dropdown-animation")
         const toggleDropdown = () => {
             dropDownNav.classList.toggle("dropdown-animation-active")
-            console.log("clicked")
         }
         hamburgerBtn.addEventListener("click", toggleDropdown)
 
@@ -32,16 +45,22 @@ function NavBar() {
                 <div className='nav-logo'>
                     <Link className='link' to='intro' smooth={true} duration={500}>Rui Jia</Link>
                 </div>
-                <div className='nav-links'>
-                    <Link className='link' to='about' smooth={true} duration={500}>About</Link>
-                    <Link className='link' to='projects' smooth={true} duration={500}>Projects</Link>
-                    <Link className='link' to='skills' smooth={true} duration={500}>Skills</Link>
-                    <Link className='link' to='contact' smooth={true} duration={500}>Contact</Link>
-                </div>
-                <div className='hamburger-btn'>
-                    <div className='hamburger-line'></div>
-                    <div className='hamburger-line'></div>
-                    <div className='hamburger-line'></div>
+                <div className='nav-options'>
+                    <div onClick={toggleMode} className='dark-light-mode-toggle-btn' ref={darkLightModeBtn}>
+                        <i className="fa-solid fa-sun dark"></i>
+                        <i className="fa-solid fa-moon light hide"></i>
+                    </div>
+                    <div className='nav-links'>
+                        <Link className='link' to='about' smooth={true} duration={500}>About</Link>
+                        <Link className='link' to='projects' smooth={true} duration={500}>Projects</Link>
+                        <Link className='link' to='skills' smooth={true} duration={500}>Skills</Link>
+                        <Link className='link' to='contact' smooth={true} duration={500}>Contact</Link>
+                    </div>
+                        <div className='hamburger-btn'>
+                        <div className='hamburger-line'></div>
+                        <div className='hamburger-line'></div>
+                        <div className='hamburger-line'></div>
+                    </div>
                 </div>
             </div>
             <div className='dropdown-nav dropdown-animation'>
@@ -132,13 +151,13 @@ function About() {
 
 function SkillCategory(props) {
     const skillCategoryRef = useRef(null)
+    const skillCardsRef = useRef(null)
     const {category} = props
     const removeTransitionDelay = () => {
         // remove transition delay on children
-        const skillCards = document.querySelectorAll(".skill-card")
-        skillCards.forEach(skillCard => {
+        for (const skillCard of skillCardsRef.current.children) {
             skillCard.style.transitionDelay = "0s"
-        })
+        }
     }
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
@@ -151,7 +170,7 @@ function SkillCategory(props) {
                         card.classList.add("slide-in-active")
                     })
                     // need to wait for animation to finish playing before removing delay
-                    setTimeout(removeTransitionDelay, 1000)
+                    setTimeout(removeTransitionDelay, 1500)
                 }
             })
         })
@@ -166,7 +185,7 @@ function SkillCategory(props) {
     return (
         <div className='skill-category' ref={skillCategoryRef}>
             <h2 className='section-subtitle slide-in'>{category.name}</h2>
-            <div className='skill-cards'>
+            <div className='skill-cards' ref={skillCardsRef}>
                 {category.skills.map((skill, index) => {
                     return (
                         <div key={index} className='skill-card slide-in'>
@@ -260,8 +279,7 @@ function Skills() {
     )
 }
 
-function ProjectCard(props) {
-    const {project} = props
+function ProjectCard({project, modalOpen, open, close}) {
     const projectCardRef = useRef(null)
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -303,6 +321,14 @@ function ProjectCard(props) {
                     <a className='project-link' href={`${project.link}`}>
                         <i className="fa-solid fa-link" style={{color: "#5182d6"}}></i>
                     </a>
+                    {/* not using for now, remove hide continue working on it*/}
+                    <motion.button
+                    whileHover={{scale: 1.1}}
+                    whileTap={{scale: 0.9}}
+                    className='hide'
+                    onClick={() => (modalOpen ? close(): open())}>
+                        <i className='fa-solid fa-arrow-up-right-from-square'></i>
+                    </motion.button>
                 </div>
             </div>
         </div>
@@ -310,6 +336,15 @@ function ProjectCard(props) {
 }
 
 function Projects() {
+    const [modalOpen, setModalOpen] = useState(false)
+    const close = () => {
+        setModalOpen(false)
+        document.querySelector("body").style.overflow = "unset"
+    }
+    const open = () => {
+        setModalOpen(true)
+        document.querySelector("body").style.overflow = "hidden"
+    }
     const allProjects = [
         {
             title: "Aira Chatbot",
@@ -338,6 +373,20 @@ function Projects() {
             img: "youtube-icon.png",
             link: "https://github.com/matochichap/youtube-downloader",
             skills: ["Python", "Tkinter"]
+        },
+        {
+            title: "Snake Game",
+            subtitle: "Simple snake game built with Python and Turtle graphics that can save you high score too.",
+            img: "snake-icon.png",
+            link: "https://github.com/matochichap/snake-game",
+            skills: ["Python", "Turtle", "OOP"]            
+        },
+        {
+            title: "Turtle Crossing",
+            subtitle: "Crossy Road but with turtles that gets harder as you clear more levels built with Python and Turtle graphics.",
+            img: "turtle-crossing-icon.png",
+            link: "https://github.com/matochichap/turtle-crossing",
+            skills: ["Python", "Turtle", "OOP"]            
         }
     ]
     return (
@@ -348,10 +397,21 @@ function Projects() {
             <div className='project-cards'>
                 {allProjects.map((project, index) => {
                     return (
-                        <ProjectCard key={index} project={project}></ProjectCard>
+                        <ProjectCard 
+                        key={index} 
+                        project={project}
+                        modalOpen={modalOpen}
+                        close={close}
+                        open={open}></ProjectCard>
                     )
                 })}
             </div>
+            <AnimatePresence
+            initial={false}
+            mode='wait'
+            onExitComplete={() => null}>
+                {modalOpen && <Modal modalOpen={modalOpen} handleClose={close}/>}
+            </AnimatePresence>
         </section>
         </>
     )
@@ -377,6 +437,63 @@ function Contact() {
             <p className="copyright">© Copyright {year} Chan Rui Jia</p>
         </section>
         </>
+    )
+}
+
+function Backdrop({children, onClick}) {
+    return (
+        <motion.div 
+        className='backdrop' 
+        onClick={onClick}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{opacity: 0}}>
+            {children}
+        </motion.div>
+    )
+}
+
+function Modal({handleClose, text}) {
+    const dropIn = {
+        hidden: {
+            y: "-100vh",
+            opacity: 0
+        },
+        visible: {
+            y: "0",
+            opacity: 1,
+            transition: {
+                duration: 0.1,
+                type: "spring",
+                damping: 25,
+                stiffness: 500
+            }
+        },
+        exit: {
+            y: "100vh",
+            opacity: 0
+        }
+    }
+    return (
+        <Backdrop onClick={handleClose}>
+            <motion.div
+            onClick={e => e.stopPropagation()}
+            className='modal'
+            variants={dropIn}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            >
+                <motion.button
+                whileHover={{scale: 1.1}}
+                whileTap={{scale: 0.9}}
+                className='modal-close-btn'
+                onClick={handleClose}>
+                    exit
+                </motion.button>
+                <div className='content'>woidaajwoiadj</div>
+            </motion.div>
+        </Backdrop>
     )
 }
 

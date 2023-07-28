@@ -1,13 +1,11 @@
 html {
     font-family: 'Montserrat', sans-serif;
-    background-color: black;
 }
 
 body {
     margin: 0;
-    color: #f0f0f0;
 }
 
 ::-webkit-scrollbar {
-    width: 0;
+    width: 0px;
 }
