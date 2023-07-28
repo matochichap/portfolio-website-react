@@ -79,6 +79,7 @@ hr {
     align-items: center;
     padding: 15px 20px;
     background-color: var(--color-card);
+    transition: background-color 1s ease;
 }
 
 .nav-logo {
@@ -106,7 +107,7 @@ hr {
     width: 25px;
     scale: 120%;
     cursor: pointer;
-    transition: scale 0.5s ease;
+    transition: scale 0.5s ease, background-color 1s ease, color 1s ease;
 
     &:hover {
         scale: 140%;
@@ -431,6 +432,7 @@ hr {
     align-items: center;
     border-radius: 10px;
     background-color: var(--color-card-fg);
+    transition: background-color 1s ease;
 }
 
 .project-img {
