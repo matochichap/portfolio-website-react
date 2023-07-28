@@ -25,6 +25,10 @@ hr {
     margin: 60px 0 30px;
 }
 
+.fa-icon {
+    color: var(--color-fa-icon);
+}
+
 .hide {
     display: none;
 }
@@ -40,9 +44,11 @@ hr {
     --color-bg: #000000;
     --color-card: rgb(40, 40, 40);
     --color-card-fg: rgb(61, 61, 61);
-    --color-project-skill-tag: rgb(35, 35, 35);
+    --color-project-skill-tag-outline: rgb(35, 35, 35);
     --color-text: #f0f0f0;
     --color-fa-icon: rgb(48, 114, 228);
+    --color-grad-start: #28416f;
+    --color-grad-end: #1b3563;
     color: var(--color-text);
     background-color: var(--color-bg);
     transition: color 1s ease, background-color 1s ease;
@@ -52,8 +58,10 @@ hr {
     --color-bg: #f0f0f0;
     --color-card: rgb(211, 211, 211);
     --color-card-fg: rgb(159, 159, 159);
-    --color-project-skill-tag: rgb(178, 178, 178);
+    --color-project-skill-tag-outline: rgb(178, 178, 178);
     --color-text: black;
+    --color-grad-start: #9bafd5;
+    --color-grad-end: #7d9edc;
 }
 
 /* NavBar */
@@ -98,6 +106,11 @@ hr {
     width: 25px;
     scale: 120%;
     cursor: pointer;
+    transition: scale 0.5s ease;
+
+    &:hover {
+        scale: 140%;
+    }
 }
 
 .nav-links .link {
@@ -366,18 +379,18 @@ hr {
 /* Projects */
 
 .projects {
-    padding: 0 calc(40px + 3vw);
+    padding: 0 2%;
 }
 
 .project-cards {
     --card-length: calc(40px + 15vw);
     display: grid;
-    grid-template-rows: calc(var(--card-length) + 5vw);
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: center;
     margin: 50px 0;
-    scale: 90%;
+    /* scale: 90%; */
 }
 
 .project-card {
@@ -390,6 +403,7 @@ hr {
     height: var(--card-length);
     width: calc(var(--card-length) * 2);
     perspective: 1000px;
+    scale: 90%;
 }
 
 .project-card-inner {
@@ -430,27 +444,32 @@ hr {
 }
 
 .project-card-back {
+    transform: rotateY(180deg);
+}
+
+.project-card-back-inner {
+    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border-radius: 10px;
     background-color: var(--color-card);
-    transform: rotateY(180deg);
 }
 
 .project-skill-tags {
     display: flex;
-    margin-bottom: calc(8px + 2vw);
+    scale: 85%;
 }
 
 .project-skill-tag {
-    border: 2px solid var(--color-project-skill-tag);
+    border: 2px solid var(--color-project-skill-tag-outline);
     border-radius: 100px;
     margin: 0 calc(0.5vw);
     padding: 10px 20px;
-    color: #f0f0f0;
-    background: linear-gradient(112.1deg, #23375b 11.4%, #192e52 70.2%);
+    color: var(--color-text);
+    background: linear-gradient(112.1deg, var(--color-grad-start) 11.4%, var(--color-grad-end) 70.2%);
     transition: opacity 0.5s ease, scale 0.5s ease, filter 1s ease;
 }
 
@@ -470,11 +489,10 @@ hr {
 .project-subtitle {
     font-size: calc(3px + 1vw);
     text-align: justify;
-    margin: 0 70px;
+    margin: clamp(2vh, 10px, 3vh) 70px;
 }
 
 .project-link {
-    margin-top: calc(10px + 1.5vw);
     transition: scale 0.5s ease;
 }
 
@@ -513,7 +531,7 @@ hr {
     .project-cards {
         --card-length: calc(55px + 17.5vw);
         grid-template-columns: 1fr;
-        scale: 100%;
+        scale: 95%;
     }
 
     .project-img-box {
@@ -531,6 +549,7 @@ hr {
 
     .project-skill-tags {
         margin-bottom: calc(5px + 2vw);
+        scale: 100%;
     }
 
     .project-skill-tag {
@@ -584,8 +603,7 @@ hr {
     scale: 90%;
 }
 
-.fa-icons {
-    color: var(--color-fa-icon);
+.contact-fa-icons {
     font-size: var(--contact-link-box-height);
     scale: 60%;
 }

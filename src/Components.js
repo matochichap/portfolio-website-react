@@ -5,18 +5,16 @@ import { Link } from 'react-scroll';
 import { motion, AnimatePresence } from "framer-motion";
 
 function NavBar() {
+    const [isDarkMode, setIsDarkMode] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches)
     const darkLightModeBtn = useRef(null)
+    const root = document.getElementById("root")
+    // set mode according to user theme setting
+    isDarkMode ? root.classList.remove("light-mode") : root.classList.add("light-mode")
     // toggle dark light mode
     const toggleMode = () => {
         // change color scheme
-        const root = document.getElementById("root")
         root.classList.toggle("light-mode")
-
-        // switch icon
-        const dark = darkLightModeBtn.current.querySelector(".dark")
-        const light = darkLightModeBtn.current.querySelector(".light")
-        dark.classList.toggle("hide")
-        light.classList.toggle("hide")
+        setIsDarkMode(!isDarkMode)
     }
     useEffect(() => {
         // dropdown animation when hamburgerBtn is pressed
@@ -47,8 +45,8 @@ function NavBar() {
                 </div>
                 <div className='nav-options'>
                     <div onClick={toggleMode} className='dark-light-mode-toggle-btn' ref={darkLightModeBtn}>
-                        <i className="fa-solid fa-sun dark"></i>
-                        <i className="fa-solid fa-moon light hide"></i>
+                        {isDarkMode ? <i className="fa-solid fa-sun"></i> 
+                                    : <i className="fa-solid fa-moon"></i>}
                     </div>
                     <div className='nav-links'>
                         <Link className='link' to='about' smooth={true} duration={500}>About</Link>
@@ -173,6 +171,9 @@ function SkillCategory(props) {
                     setTimeout(removeTransitionDelay, 1500)
                 }
             })
+        },
+        {
+            threshold: 0.5
         })
 
         observer.observe(skillCategoryRef.current)
@@ -308,27 +309,29 @@ function ProjectCard({project, modalOpen, open, close}) {
                     <h2 className='project-title'>{project.title}</h2>
                 </div>
                 <div className='project-card-back'>
-                    <div className='project-skill-tags'>
-                        {project.skills.map((skill, index) => {
-                            return (
-                                <div key={index} className="project-skill-tag">
-                                    <p className="project-skill">{skill}</p>
-                                </div>
-                            )
-                        })}
+                    <div className='project-card-back-inner'>
+                        <div className='project-skill-tags'>
+                            {project.skills.map((skill, index) => {
+                                return (
+                                    <div key={index} className="project-skill-tag">
+                                        <p className="project-skill">{skill}</p>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                        <p className='project-subtitle'>{project.subtitle}</p>
+                        <a className='project-link' href={`${project.link}`}>
+                            <i className="fa-solid fa-link fa-icon"></i>
+                        </a>
+                        {/* not using for now, remove hide continue working on it*/}
+                        <motion.button
+                        whileHover={{scale: 1.1}}
+                        whileTap={{scale: 0.9}}
+                        className='hide'
+                        onClick={() => (modalOpen ? close(): open())}>
+                            <i className='fa-solid fa-arrow-up-right-from-square'></i>
+                        </motion.button>
                     </div>
-                    <p className='project-subtitle'>{project.subtitle}</p>
-                    <a className='project-link' href={`${project.link}`}>
-                        <i className="fa-solid fa-link" style={{color: "#5182d6"}}></i>
-                    </a>
-                    {/* not using for now, remove hide continue working on it*/}
-                    <motion.button
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
-                    className='hide'
-                    onClick={() => (modalOpen ? close(): open())}>
-                        <i className='fa-solid fa-arrow-up-right-from-square'></i>
-                    </motion.button>
                 </div>
             </div>
         </div>
@@ -375,15 +378,15 @@ function Projects() {
             skills: ["Python", "Tkinter"]
         },
         {
-            title: "Snake Game",
-            subtitle: "Simple snake game built with Python and Turtle graphics that can save you high score too.",
-            img: "snake-icon.png",
-            link: "https://github.com/matochichap/snake-game",
-            skills: ["Python", "Turtle", "OOP"]            
+            title: "Queue App API",
+            subtitle: "An API with user authentication built with MongoDB, Express and PassportJS for a larger project I'm working on.",
+            img: "queue-icon.png",
+            link: "https://github.com/matochichap/queue-app-db-api",
+            skills: ["Express", "MongoDB", "PassportJS", "API"]            
         },
         {
             title: "Turtle Crossing",
-            subtitle: "Crossy Road but with turtles that gets harder as you clear more levels built with Python and Turtle graphics.",
+            subtitle: "Crossy Road but with turtles built with Python and Turtle graphics that gets harder as you clear more levels.",
             img: "turtle-crossing-icon.png",
             link: "https://github.com/matochichap/turtle-crossing",
             skills: ["Python", "Turtle", "OOP"]            
@@ -402,7 +405,8 @@ function Projects() {
                         project={project}
                         modalOpen={modalOpen}
                         close={close}
-                        open={open}></ProjectCard>
+                        open={open}
+                        ></ProjectCard>
                     )
                 })}
             </div>
@@ -430,9 +434,9 @@ function Contact() {
             <h1 className='section-title'>Contact</h1>
             <hr />
             <div className='contact-links'>
-                <div className="contact-link-box"><a href={links.linkedin}><i className="fa-brands fa-linkedin fa-icons"></i></a></div>
-                <div className="contact-link-box"><a href={links.github}><i className="fa-brands fa-github fa-icons"></i></a></div>
-                <div className="contact-link-box"><a href={links.email}><i className="fa-solid fa-envelope fa-icons"></i></a></div>
+                <div className="contact-link-box"><a href={links.linkedin}><i className="fa-brands fa-linkedin contact-fa-icons fa-icon"></i></a></div>
+                <div className="contact-link-box"><a href={links.github}><i className="fa-brands fa-github contact-fa-icons fa-icon"></i></a></div>
+                <div className="contact-link-box"><a href={links.email}><i className="fa-solid fa-envelope contact-fa-icons fa-icon"></i></a></div>
             </div>
             <p className="copyright">© Copyright {year} Chan Rui Jia</p>
         </section>
