@@ -45,7 +45,7 @@ hr {
     --color-fa-icon: rgb(48, 114, 228);
     color: var(--color-text);
     background-color: var(--color-bg);
-    transition: all 1s ease;
+    transition: color 1s ease, background-color 1s ease;
 }
 
 .light-mode {
