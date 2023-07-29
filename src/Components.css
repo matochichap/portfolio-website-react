@@ -277,6 +277,7 @@ hr {
     border-radius: 10px;
     padding: 5px clamp(3%, 20px, 5%);
     margin: 3vw;
+    transition: background-color 1s ease;
 }
 
 .about-card h2 {
@@ -311,10 +312,11 @@ hr {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: var(--color-card);
     border-radius: 10px;
     width: var(--length);
     height: var(--length);
+    background-color: var(--color-card);
+    transition: background-color 1s ease;
 
     &:nth-child(2) {
         transition-delay: 200ms;
@@ -357,7 +359,8 @@ hr {
     opacity: 0;
     filter: blur(5px);
     transform: translateX(-100%);
-    transition: opacity 1s, transform 1s, scale 0.5s, filter 1s;
+    /* overrides .skill-card because transitions are on same level */
+    transition: opacity 1s, transform 1s, scale 0.5s, filter 1s, background-color 1s ease;
 }
 
 .slide-in-active {
@@ -391,7 +394,6 @@ hr {
     align-items: center;
     justify-items: center;
     margin: 50px 0;
-    /* scale: 90%; */
 }
 
 .project-card {
@@ -421,6 +423,7 @@ hr {
     justify-content: space-evenly;
     border-radius: 10px;
     background-color: var(--color-card);
+    transition: background-color 1s ease;
 }
 
 .project-img-box {
@@ -458,6 +461,7 @@ hr {
     flex-direction: column;
     border-radius: 10px;
     background-color: var(--color-card);
+    transition: background-color 1s ease;
 }
 
 .project-skill-tags {
@@ -601,7 +605,7 @@ hr {
     width: var(--contact-link-box-height);
     height: var(--contact-link-box-height);
     background-color: var(--color-card);
-    transition: opacity 0.5s ease, scale 0.5s ease;
+    transition: opacity 0.5s ease, scale 0.5s ease, background-color 1s ease;
     scale: 90%;
 }
 

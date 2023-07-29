@@ -168,7 +168,7 @@ function SkillCategory(props) {
                         card.classList.add("slide-in-active")
                     })
                     // need to wait for animation to finish playing before removing delay
-                    setTimeout(removeTransitionDelay, 1500)
+                    setTimeout(removeTransitionDelay, 1000)
                 }
             })
         },
