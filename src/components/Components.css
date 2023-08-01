@@ -49,6 +49,8 @@ hr {
     --color-fa-icon: rgb(48, 114, 228);
     --color-grad-start: #28416f;
     --color-grad-end: #1b3563;
+    --color-modal: rgb(40, 40, 40);
+    --color-modal-card: rgb(61, 61, 61);
     color: var(--color-text);
     background-color: var(--color-bg);
     transition: color 1s ease, background-color 1s ease;
@@ -62,6 +64,8 @@ hr {
     --color-text: black;
     --color-grad-start: #9bafd5;
     --color-grad-end: #7d9edc;
+    --color-modal: rgb(211, 211, 211);
+    --color-modal-card: rgb(186, 186, 186);
 }
 
 /* NavBar */
@@ -74,7 +78,7 @@ hr {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;    
+    z-index: 2;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
@@ -157,7 +161,7 @@ hr {
     .navbar {
         --main-nav-height: 20px;
     }
-    
+
     .main-nav {
         height: var(--main-nav-height);
     }
@@ -207,7 +211,6 @@ hr {
 
 /* Intro */
 .intro {
-    background-image: url("../public/resources/images/intro-background.jpg");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -255,7 +258,7 @@ hr {
     .intro-icon {
         height: 30vw;
     }
-    
+
     .intro-text {
         text-align: center;
         width: 70%;
@@ -449,6 +452,7 @@ hr {
 }
 
 .project-card-back {
+    cursor: pointer;
     transform: rotateY(180deg);
 }
 
@@ -464,26 +468,6 @@ hr {
     transition: background-color 1s ease;
 }
 
-.project-skill-tags {
-    display: flex;
-    scale: 85%;
-}
-
-.project-skill-tag {
-    border: 2px solid var(--color-project-skill-tag-outline);
-    border-radius: 100px;
-    margin: 0 calc(0.5vw);
-    padding: 10px 20px;
-    color: var(--color-text);
-    background: linear-gradient(112.1deg, var(--color-grad-start) 11.4%, var(--color-grad-end) 70.2%);
-    transition: opacity 0.5s ease, scale 0.5s ease, filter 1s ease;
-}
-
-.project-skill {
-    margin: 0;
-    font-size: calc(3px + 1vw);
-}
-
 .project-card-back hr {
     width: 15vw;
 }
@@ -495,42 +479,40 @@ hr {
 .project-subtitle {
     font-size: calc(3px + 1vw);
     text-align: justify;
-    margin: clamp(2vh, 10px, 3vh) 70px;
+    margin: clamp(2.5vh, 10px, 3vh) 70px;
 }
 
-.project-link {
+.project-buttons {
+    display: flex;
+    font-size: calc(8px + 1.5vw);
+    width: 25%;
+    justify-content: space-around;
+}
+
+.project-buttons i {
     transition: scale 0.5s ease;
+
+    &:hover {
+        scale: 120%;
+    }
 }
 
-.fa-link {
-    font-size: calc(5px + 1.5vw);
+.project-modal {
+    cursor: pointer;
 }
 
 .project-card:hover .project-card-inner {
     transform: rotateY(180deg);
 }
 
-.project-card-front, .project-card-back {
+.project-card-front,
+.project-card-back {
     position: absolute;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden; /* Safari */
+    -webkit-backface-visibility: hidden;
+    /* Safari */
     backface-visibility: hidden;
-}
-
-.project-link:hover {
-    scale: 120%;
-}
-
-.project-skill-tag:hover {
-    user-select: none;
-    scale: 120%;
-}
-
-.project-skill-tags:has(:hover) .project-skill-tag:not(:hover) {
-    opacity: 0.5;
-    scale: 90%;
-    filter: blur(2px);
 }
 
 @media (max-width: 1065px) {
@@ -553,22 +535,9 @@ hr {
         font-size: calc(7.5px + 1.5vw);
     }
 
-    .project-skill-tags {
-        margin-bottom: calc(5px + 2vw);
-        scale: 100%;
-    }
-
-    .project-skill-tag {
-        padding: 5px 10px;
-    }
-
     .project-subtitle {
         font-size: calc(5px + 1vw);
-        margin: 0 40px;
-    }
-
-    .project-link {
-        margin-top: calc(5px + 1.5vw);
+        margin: clamp(1.5vh, 5px, 3vh) 12%;
     }
 }
 
@@ -646,36 +615,125 @@ hr {
 
 /* Backdrop */
 .backdrop {
-    position: absolute;
-    top: 0;
-    left: 0;
     height: 100%;
     width: 100%;
-    background: #000000e1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    z-index: 3
+    background: #000000aa;
 }
 
 /* Modal */
 .modal {
     width: clamp(50%, 700px, 90%);
-    height: 50vh;
-    margin: auto;
-    padding: 40px;
+    height: 70vh;
     border-radius: 12px;
-    background-color: var(--color-card);
-    position: fixed;
-    z-index: 3;
+    background-color: var(--color-modal);
     overflow-y: auto;
 }
 
-.modal-close-btn {
-    width: 10%;
+.modal-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: calc(2.5px + 1.5vh) 3.5%;
+    background-color: var(--color-modal-card);
+    z-index: 1;
 }
 
-.content {
-    height: 1000px;
+.modal-title {
+    margin: 0;
+    font-size: calc(15px + 0.5vw);
+    display: flex;
+    align-items: center;
+}
+
+.modal-close-btn {
+    font-size: 30px;
+    cursor: pointer;
+    transition: scale 0.5s ease;
+
+    &:hover {
+        scale: 120%;
+    }
+}
+
+.modal-content {
+    padding: 1% 4%;
+}
+
+/* ProjectsModalContent */
+.modal-heading {
+    font-size: calc(14px + 0.5vw);
+}
+
+.modal-subheading {
+    font-size: calc(10px + 0.5vw);
+}
+
+.modal-project-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.modal-project-skill-tag {
+    border: 2px solid var(--color-project-skill-tag-outline);
+    border-radius: 100px;
+    margin: 5px 0.5vw;
+    padding: 10px 20px;
+    color: var(--color-text);
+    background: linear-gradient(112.1deg, var(--color-grad-start) 11.4%, var(--color-grad-end) 70.2%);
+    transition: opacity 0.5s ease, scale 0.5s ease, filter 1s ease;
+
+    &:hover {
+        user-select: none;
+        scale: 120%;
+    }
+}
+
+.modal-project-skill-tags:has(:hover) .modal-project-skill-tag:not(:hover) {
+    opacity: 0.5;
+    scale: 90%;
+    filter: blur(2px);
+}
+
+.modal-project-skill {
+    margin: 0;
+}
+
+.modal-comments-card {
+    background-color: var(--color-modal-card);
+    border-radius: 10px;
+    padding: 5px clamp(3%, 20px, 5%);
+    margin: 20px 0;
+    transition: background-color 1s ease;
+}
+
+.modal-features-card {
+    background-color: var(--color-modal-card);
+    border-radius: 10px;
+    padding: 5px clamp(3%, 20px, 5%) 15px;
+    margin: 20px 0;
+    transition: background-color 1s ease;
+}
+
+.modal-features-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-features-image {
+    margin: 10px 0;
+    border-radius: 10px;
 }
