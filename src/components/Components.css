@@ -455,11 +455,12 @@ hr {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     width: 45%;
 }
 
 .project-title {
-    width: 100%;
+    width: 90%;
     height: 80%;
     display: flex;
     align-items: center;
@@ -474,7 +475,7 @@ hr {
     font-size: calc(2px + 1.5vw);
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: flex-end;
 }
 
 .project-card-back {
