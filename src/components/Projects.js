@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 
 function ProjectCard({ project, modalOpen, open, close, index }) {
     const projectCardRef = useRef(null)
+    const projectCardInnerRef = useRef(null)
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -17,25 +18,33 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
 
         observer.observe(projectCardRef.current)
 
+        // Flip card animation
+        const projectCardInner = projectCardInnerRef.current
+        const flipCard = () => {
+            projectCardInner.classList.toggle("project-flip-card-animation")
+        }
+        projectCardInner.addEventListener("click", flipCard)
+
         return () => {
             observer.disconnect()
+            projectCardInner.removeEventListener("click", flipCard)
         }
     }, [])
 
     return (
         <div className='project-card fade-in' ref={projectCardRef}>
-            <div className='project-card-inner'>
+            <div className='project-card-inner' ref={projectCardInnerRef}>
                 <div className='project-card-front'>
                     <div className='project-img-box'>
                         <img className='project-img' src={`./resources/images/project-icons/${project.img}`} alt="icon" />
                     </div>
                     <h2 className='project-title'>{project.title}</h2>
                 </div>
-                <div className='project-card-back' onClick={() => (modalOpen ? close() : open(index))}>
+                <div className='project-card-back'>
                     <div className='project-card-back-inner'>
                         <p className='project-subtitle'>{project.subtitle}</p>
                         <div className="project-buttons">
-                            <a className='project-link' href={`${project.link}`}>
+                            <a className='project-link' href={`${project.link}`} target='_blank' rel='noopener noreferrer'>
                                 <i className="fa-solid fa-link fa-icon"></i>
                             </a>
                             <div className="project-modal" onClick={() => (modalOpen ? close() : open(index))}>

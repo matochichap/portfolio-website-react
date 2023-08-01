@@ -1,10 +1,9 @@
 import './Components.css'
-import { React, useState, useEffect, useRef } from 'react'
+import { React, useState, useEffect } from 'react'
 import { Link } from 'react-scroll';
 
 function NavBar() {
     const [isDarkMode, setIsDarkMode] = useState(window.matchMedia("(prefers-color-scheme: dark)").matches)
-    const darkLightModeBtn = useRef(null)
     const root = document.getElementById("root")
     // set mode according to user theme setting
     isDarkMode ? root.classList.remove("light-mode") : root.classList.add("light-mode")
@@ -44,7 +43,7 @@ function NavBar() {
                     <Link className='link' to='intro' smooth={true} duration={500}>Rui Jia</Link>
                 </div>
                 <div className='nav-options'>
-                    <div onClick={toggleMode} className='dark-light-mode-toggle-btn' ref={darkLightModeBtn}>
+                    <div onClick={toggleMode} className='dark-light-mode-toggle-btn'>
                         {isDarkMode ? <i className="fa-solid fa-sun"></i> 
                                     : <i className="fa-solid fa-moon"></i>}
                     </div>

@@ -416,8 +416,13 @@ hr {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.8s;
+    transition: transform 0.8s, scale 0.5s ease;
     transform-style: preserve-3d;
+    cursor: pointer;
+
+    &:hover {
+        scale: 105%;
+    }
 }
 
 .project-card-front {
@@ -452,7 +457,6 @@ hr {
 }
 
 .project-card-back {
-    cursor: pointer;
     transform: rotateY(180deg);
 }
 
@@ -501,7 +505,8 @@ hr {
     cursor: pointer;
 }
 
-.project-card:hover .project-card-inner {
+/* Flip animation */
+.project-flip-card-animation {
     transform: rotateY(180deg);
 }
 
