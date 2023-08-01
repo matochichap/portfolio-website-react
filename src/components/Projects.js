@@ -38,7 +38,10 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                     <div className='project-img-box'>
                         <img className='project-img' src={`./resources/images/project-icons/${project.img}`} alt="icon" />
                     </div>
-                    <h2 className='project-title'>{project.title}</h2>
+                    <div className='project-title-box'>
+                        <h2 className='project-title'>{project.title}</h2>
+                        <i className='fa-solid fa-repeat project-flip-icon'></i>
+                    </div>
                 </div>
                 <div className='project-card-back'>
                     <div className='project-card-back-inner'>
