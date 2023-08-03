@@ -262,7 +262,6 @@ hr {
     align-items: center;
     justify-content: space-between;
     height: fit-content;
-    /* padding: 0 15%; */
     width: 70%;
 }
 
@@ -275,25 +274,23 @@ hr {
     color: #f0f0f0;
 }
 
+.intro-content-text {
+    transform: translateX(-80%);
+    opacity: 1;
+    filter: blur(5px);
+    transition: transform 1s ease, opacity 0.5s ease, filter 0.5s ease;
+}
+
 .intro-title {
     font-size: 96px;
     font-weight: 700;
     margin: 0;
-    transform: translateX(-300px);
-    opacity: 0;
-    filter: blur(5px);
-    transition: transform 1s, opacity 0.5s ease, filter 0.5s ease;
-
 }
 
 .intro-subtitle {
     font-size: 46px;
     font-weight: 300;
     margin: 0;
-    transform: translateX(-300px);
-    opacity: 0;
-    filter: blur(5px);
-    transition: transform 1s, opacity 0.5s ease, filter 0.5s ease;
 }
 
 .intro-link {
@@ -308,7 +305,6 @@ hr {
     opacity: 0;
     filter: blur(5px);
     transition: transform 1s ease, opacity 0.5s ease, filter 1s ease, background-color 0.5s ease;
-    transition-delay: 0.5s;
 
     &:hover {
         background-color: rgb(61, 61, 61);
@@ -323,7 +319,6 @@ hr {
     opacity: 0;
     filter: blur(5px);
     transition: transform 1s ease, opacity 0.5s ease, filter 1s ease;
-    transition-delay: 0.5s;
 }
 
 .intro-animation {
