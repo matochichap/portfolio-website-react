@@ -120,8 +120,10 @@ function Skills() {
     return (
         <>
         <section className='skills'>
-            <h1 className='section-title'>Skills</h1>
-            <hr />
+            <div className="section-header">
+                <h1 className='section-title'>Skills</h1>
+                <hr />
+            </div>
             <div className='skill-categories'>
                 {allSkills.map((category, index) => {
                     return (

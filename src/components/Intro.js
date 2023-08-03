@@ -1,4 +1,4 @@
-import './Components.css'
+import './Intro.css'
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 function Intro() {

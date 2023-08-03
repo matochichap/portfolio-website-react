@@ -11,8 +11,10 @@ function Contact() {
     return (
         <>
         <section className='contact'>
-            <h1 className='section-title'>Contact</h1>
-            <hr />
+            <div className="section-header">
+                <h1 className='section-title'>Contact</h1>
+                <hr />
+            </div>
             <div className='contact-links'>
                 <div className="contact-link-box"><a href={links.linkedin}><i className="fa-brands fa-linkedin contact-fa-icons fa-icon"></i></a></div>
                 <div className="contact-link-box"><a href={links.github}><i className="fa-brands fa-github contact-fa-icons fa-icon"></i></a></div>

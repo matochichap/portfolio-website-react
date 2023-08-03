@@ -28,16 +28,18 @@ function About() {
     return (
         <>
         <section className='about'>
-            <h1 className='section-title'>About</h1>
-            <hr />
-                <div className='about-cards slide-in' ref={componentRef}>
-                    <div className='about-card'>
-                        <h2>{t1 + t2}</h2>
-                    </div>
-                    <div className='about-card'>
-                        <h2>{t3 + t4}</h2>
-                    </div>
+            <div className='section-header'>
+                <h1 className='section-title'>About</h1>
+                <hr />
+            </div>
+            <div className='about-cards slide-in' ref={componentRef}>
+                <div className='about-card'>
+                    <h2>{t1 + t2}</h2>
                 </div>
+                <div className='about-card'>
+                    <h2>{t3 + t4}</h2>
+                </div>
+            </div>
         </section>
         </>
     )

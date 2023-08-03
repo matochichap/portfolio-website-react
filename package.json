@@ -13,6 +13,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-simple-typewriter": "^5.0.1",
+    "typewriter-effect": "^2.20.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

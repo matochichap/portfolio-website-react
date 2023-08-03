@@ -45,9 +45,9 @@ function Modal({handleClose, modalContent}) {
             animate="visible"
             exit="exit"
             >
-                <div className="modal-nav" onClick={handleClose}>
+                <div className="modal-nav">
                     <h2 className='modal-title'>{title}</h2>
-                    <i className='fa-solid fa-xmark fa-icon modal-close-btn'></i>
+                    <i className='fa-solid fa-xmark fa-icon modal-close-btn' onClick={handleClose}></i>
                 </div>
                 <div className="modal-content">
                     {content}

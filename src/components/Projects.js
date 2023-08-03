@@ -40,18 +40,21 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                     </div>
                     <div className='project-title-box'>
                         <h2 className='project-title'>{project.title}</h2>
-                        <i className='fa-solid fa-repeat project-flip-icon'></i>
+                        <div className='project-flip-icon-box'>
+                            <i className='fa-solid fa-repeat project-flip-icon fa-icon'></i>
+                        </div>
                     </div>
                 </div>
                 <div className='project-card-back'>
                     <div className='project-card-back-inner'>
                         <p className='project-subtitle'>{project.subtitle}</p>
+                        <div className="project-card-back-filler"></div>
                         <div className="project-buttons">
                             <a className='project-link' href={`${project.link}`} target='_blank' rel='noopener noreferrer'>
-                                <i className="fa-solid fa-link fa-icon"></i>
+                                <i className="fa-solid fa-link fa-icon" style={{scale: "90%"}}></i>
                             </a>
-                            <div className="project-modal" onClick={() => (modalOpen ? close() : open(index))}>
-                                <i className='fa-solid fa-circle-info fa-icon'></i>
+                            <div className="project-modal">
+                                <i className='fa-regular fa-lightbulb fa-icon' onClick={() => (modalOpen ? close() : open(index))}></i>
                             </div>
                         </div>
                     </div>
@@ -390,8 +393,10 @@ function Projects() {
     return (
         <>
             <section className='projects'>
-                <h1 className='section-title'>Projects</h1>
-                <hr />
+                <div className="section-header">
+                    <h1 className='section-title'>Projects</h1>
+                    <hr />
+                </div>
                 <div className='project-cards'>
                     {allProjects.map((project, index) => {
                         return (
