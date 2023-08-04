@@ -5,7 +5,10 @@ function IDE() {
     Colors:
     red, blue, purple, orange, darkblue, default(white/black)
     */
-
+   const ideBox = document.getElementById("intro-content-right")
+    const expandIde = () => {
+        ideBox.classList.toggle("intro-content-right-expand-width")
+    }
     const tab = "    " // 4 spaces
     const code = [
         [["class ", "red"], ["RuiJia", "orange"], [":", "default"]],
@@ -32,6 +35,9 @@ function IDE() {
                         <i className="fa-brands fa-python"></i>
                     </span>
                     <span className="ide-tab-file">hello.py</span>
+                </div>
+                <div className="ide-expand-icon-box" onClick={expandIde}>
+                    <i className="fa-solid fa-arrows-left-right ide-expand-icon"></i>
                 </div>
             </div>
             <div className="ide-body">

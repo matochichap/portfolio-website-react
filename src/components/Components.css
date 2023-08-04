@@ -326,11 +326,7 @@ hr {
     transform: translateX(20%);
     opacity: 0;
     filter: blur(5px);
-    transition: transform 1s ease, opacity 0.5s ease, filter 1s ease, scale 0.5s ease;
-
-    &:hover {
-        scale: 110%;
-    }
+    transition: transform 1s ease, opacity 0.5s ease, filter 1s ease, width 0.5s ease;
 }
 
 .intro-animation {
@@ -356,7 +352,10 @@ hr {
     .intro-content {
         flex-direction: column;
     }
-    .intro-content-left, .intro-content-right {
+    .intro-content-left {
+        width: 100%;
+    }
+    .intro-content-right {
         width: 100%;
     }
     .intro-content-left {
@@ -371,6 +370,12 @@ hr {
     }
     .intro-link {
         font-size: calc(12px + 0.5vw);
+    }
+}
+
+@media (max-width: 768px) {
+    .intro-content-right-expand-width {
+        width: 130%;
     }
 }
 
@@ -925,6 +930,7 @@ hr {
     border-radius: var(--ide-border-radius) var(--ide-border-radius) 0 0;
     padding: 7px 7px 0;
     display: flex;
+    justify-content: space-between;
     transition: background-color 1s ease;
 }
 
@@ -940,6 +946,26 @@ hr {
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
     font-weight: 350;
     margin-left: 7px;
+}
+
+.ide-expand-icon-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 6px;
+    margin-bottom: 5px;
+    border: solid 1.5px var(--color-card-fg);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    display: none;
+    &:hover {
+        background-color: var(--color-card-fg);
+    }
+}
+
+.ide-expand-icon {
+
 }
 
 .ide-body {
@@ -970,5 +996,11 @@ hr {
 @media(max-width: 1190px) {
     .ide {
         width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .ide-expand-icon-box {
+        display: block;
     }
 }
