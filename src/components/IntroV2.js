@@ -23,8 +23,6 @@ function Intro() {
         })
 
         observer.observe(textRef.current)
-        // observer.observe(btnRef.current)
-        // observer.observe(ideRef.current)
 
         return () => {
             observer.disconnect()

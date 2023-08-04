@@ -315,7 +315,7 @@ hr {
     display: flex;
     justify-content: flex-end;
     width: var(--intro-content-right-width);
-    transform: translateX(300px);
+    transform: translateX(20%);
     opacity: 0;
     filter: blur(5px);
     transition: transform 1s ease, opacity 0.5s ease, filter 1s ease;
@@ -512,7 +512,6 @@ hr {
     height: 100%;
     transition: transform 0.8s, scale 0.5s ease;
     transform-style: preserve-3d;
-    cursor: pointer;
 
     &:hover {
         scale: 105%;
@@ -570,6 +569,7 @@ hr {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 .project-flip-icon {
@@ -577,7 +577,6 @@ hr {
     border-radius: 7px;
     font-size: calc(2px + 1.5vw);
     padding: calc(2px + 0.5vw);
-    scale: 80%;
     transition: background-color 0.5s ease, border 1s ease;
 
     &:hover {
@@ -614,7 +613,7 @@ hr {
 .project-buttons {
     display: flex;
     font-size: calc(10px + 1.2vw);
-    width: 25%;
+    width: 40%;
     height: 18%;
     justify-content: space-between;
 }
@@ -632,14 +631,16 @@ hr {
     text-decoration: none;
 }
 
-.project-modal, .project-link {
+.project-modal, .project-link, .project-flip-icon-back-box {
     border: solid 2px var(--color-button-hover);
     border-radius: 7px;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100%;
+    scale: 90%;
     aspect-ratio: 1/1;
+    cursor: pointer;
     transition: background-color 0.5s ease;
     
     &:hover {
@@ -668,7 +669,7 @@ hr {
         grid-template-columns: 1fr;
     }
 
-    .project-img-box {
+    .project-card-front {
         --length: calc(15vw);
     }
 

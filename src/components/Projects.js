@@ -6,6 +6,8 @@ import { AnimatePresence } from "framer-motion";
 function ProjectCard({ project, modalOpen, open, close, index }) {
     const projectCardRef = useRef(null)
     const projectCardInnerRef = useRef(null)
+    const projectFrontFlipBtnRef = useRef(null)
+    const projectBackFlipBtnRef = useRef(null)
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -20,14 +22,18 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
 
         // Flip card animation
         const projectCardInner = projectCardInnerRef.current
+        const frontFlipBtn = projectFrontFlipBtnRef.current
+        const backFlipBtn = projectBackFlipBtnRef.current
         const flipCard = () => {
             projectCardInner.classList.toggle("project-flip-card-animation")
         }
-        projectCardInner.addEventListener("click", flipCard)
+        frontFlipBtn.addEventListener("click", flipCard)
+        backFlipBtn.addEventListener("click", flipCard)
 
         return () => {
             observer.disconnect()
-            projectCardInner.removeEventListener("click", flipCard)
+            frontFlipBtn.removeEventListener("click", flipCard)
+            backFlipBtn.removeEventListener("click", flipCard)
         }
     }, [])
 
@@ -41,7 +47,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                     <div className='project-title-box'>
                         <h2 className='project-title'>{project.title}</h2>
                         <div className='project-flip-icon-box'>
-                            <i className='fa-solid fa-repeat project-flip-icon fa-icon'></i>
+                            <i className='fa-solid fa-repeat project-flip-icon fa-icon' ref={projectFrontFlipBtnRef}></i>
                         </div>
                     </div>
                 </div>
@@ -55,6 +61,9 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                             </a>
                             <div className="project-modal">
                                 <i className='fa-regular fa-lightbulb fa-icon' onClick={() => (modalOpen ? close() : open(index))}></i>
+                            </div>
+                            <div className='project-flip-icon-back-box'>
+                                <i className='fa-solid fa-repeat fa-icon' ref={projectBackFlipBtnRef}></i>
                             </div>
                         </div>
                     </div>
