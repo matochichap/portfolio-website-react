@@ -60,7 +60,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                                 <i className="fa-solid fa-link fa-icon" style={{scale: "90%"}}></i>
                             </a>
                             <div className="project-modal">
-                                <i className='fa-regular fa-lightbulb fa-icon' onClick={() => (modalOpen ? close() : open(index))}></i>
+                                <i className='fa-regular fa-lightbulb fa-icon-highlight' onClick={() => (modalOpen ? close() : open(index))}></i>
                             </div>
                             <div className='project-flip-icon-back-box'>
                                 <i className='fa-solid fa-repeat fa-icon' ref={projectBackFlipBtnRef}></i>
