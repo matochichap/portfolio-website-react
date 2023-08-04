@@ -37,7 +37,7 @@ function IDE() {
                     <span className="ide-tab-file">hello.py</span>
                 </div>
                 <div className="ide-expand-icon-box" onClick={expandIde}>
-                    <i className="fa-solid fa-arrows-left-right ide-expand-icon"></i>
+                    <i className="fa-solid fa-arrows-left-right"></i>
                 </div>
             </div>
             <div className="ide-body">
