@@ -326,7 +326,11 @@ hr {
     transform: translateX(20%);
     opacity: 0;
     filter: blur(5px);
-    transition: transform 1s ease, opacity 0.5s ease, filter 1s ease;
+    transition: transform 1s ease, opacity 0.5s ease, filter 1s ease, scale 0.5s ease;
+
+    &:hover {
+        scale: 110%;
+    }
 }
 
 .intro-animation {
