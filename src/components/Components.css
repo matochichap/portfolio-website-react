@@ -569,7 +569,6 @@ hr {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    cursor: pointer;
 }
 
 .project-flip-icon {
@@ -577,6 +576,7 @@ hr {
     border-radius: 7px;
     font-size: calc(2px + 1.5vw);
     padding: calc(2px + 0.5vw);
+    cursor: pointer;
     transition: background-color 0.5s ease, border 1s ease;
 
     &:hover {

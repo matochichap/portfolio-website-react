@@ -56,7 +56,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                         <p className='project-subtitle'>{project.subtitle}</p>
                         <div className="project-card-back-filler"></div>
                         <div className="project-buttons">
-                            <a className='project-link' href={`${project.link}`} target='_blank' rel='noopener noreferrer'>
+                            <a className='project-link' href={`${project.link}`}>
                                 <i className="fa-solid fa-link fa-icon" style={{scale: "90%"}}></i>
                             </a>
                             <div className="project-modal">
