@@ -1,14 +1,26 @@
 import "./Components.css"
+import { useEffect, useRef } from "react"
 
 function IDE() {
     /*
     Colors:
     red, blue, purple, orange, darkblue, default(white/black)
     */
-   const ideBox = document.getElementById("intro-content-right")
-    const expandIde = () => {
-        ideBox.classList.toggle("intro-content-right-expand-width")
-    }
+    const expandIconRef = useRef(null)
+    useEffect(() => {
+        const ideBox = document.getElementById("intro-content-right")
+        const expandIcon = expandIconRef.current
+        const expandIde = () => {
+            ideBox.classList.toggle("intro-content-right-expand-width")
+        }
+        
+        expandIcon.addEventListener("click", expandIde)
+
+        return () => {
+            expandIcon.removeEventListener("click", expandIde)
+        }
+    }, [])
+
     const tab = "    " // 4 spaces
     const code = [
         [["class ", "red"], ["RuiJia", "orange"], [":", "default"]],
@@ -36,7 +48,7 @@ function IDE() {
                     </span>
                     <span className="ide-tab-file">hello.py</span>
                 </div>
-                <div className="ide-expand-icon-box" onClick={expandIde}>
+                <div className="ide-expand-icon-box" ref={expandIconRef}>
                     <i className="fa-solid fa-arrows-left-right"></i>
                 </div>
             </div>
