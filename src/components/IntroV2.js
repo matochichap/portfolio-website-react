@@ -39,7 +39,7 @@ function Intro() {
                             Rui Jia
                         </h1>
                         <h2 className='intro-subtitle'>
-                            Computer Science undergratuate at NUS
+                            Computer Science undergratuate
                         </h2>
                     </div>
                     <div className='intro-wrapper intro-link' ref={btnRef}>

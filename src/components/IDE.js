@@ -12,6 +12,7 @@ function IDE() {
         [[`${tab}def `, "red"], ["__init__", "purple"], ["(self):", "default"]],
         [[`${tab}${tab}self.name `, "default"], ["= ", "darkblue"], ["\"Rui Jia\"", "blue"]],
         [[`${tab}${tab}self.major `, "default"], ["= ", "darkblue"], ["\"Computer Science\"", "blue"]],
+        [[`${tab}${tab}self.university `, "default"], ["= ", "darkblue"], ["\"National University of Singapore\"", "blue"]],
         [["", "default"]],
         [[`${tab}def `, "red"], ["says_hi", "purple"], ["(self):", "default"]],
         [[`${tab}${tab}print`, "purple"], ["(", "default"], ["\"Hi, I'm Rui Jia.\"", "blue"], [")", "default"]],
