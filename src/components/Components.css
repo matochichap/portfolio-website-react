@@ -625,7 +625,14 @@ hr {
 .project-subtitle {
     font-size: calc(3px + 1vw);
     text-align: justify;
-    margin: 0 70px;
+    margin: 0 8%;
+    padding: 4%;
+    border: solid 2px var(--color-button-hover);
+    border-radius: 10px;
+    transition: background-color 0.5s ease;
+    &:hover {
+        background-color: var(--color-button-hover);
+    }
 }
 
 .project-card-back-filler {
@@ -705,8 +712,7 @@ hr {
     }
 
     .project-subtitle {
-        font-size: calc(5px + 1vw);
-        margin: 0 12%;
+        font-size: calc(5px + 0.8vw);
     }
 
     .project-flip-icon {
