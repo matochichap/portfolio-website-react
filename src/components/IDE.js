@@ -1,5 +1,5 @@
 import "./Components.css"
-import { useEffect, useRef } from "react"
+import { useState, useEffect, useRef } from "react"
 
 function IDE() {
     /*
@@ -7,11 +7,13 @@ function IDE() {
     red, blue, purple, orange, darkblue, default(white/black)
     */
     const expandIconRef = useRef(null)
+    const [isExpanded, setIsExpanded] = useState(false)
     useEffect(() => {
         const ideBox = document.getElementById("intro-content-right")
         const expandIcon = expandIconRef.current
         const expandIde = () => {
             ideBox.classList.toggle("intro-content-right-expand-width")
+            setIsExpanded(!isExpanded)
         }
         
         expandIcon.addEventListener("click", expandIde)
@@ -19,7 +21,7 @@ function IDE() {
         return () => {
             expandIcon.removeEventListener("click", expandIde)
         }
-    }, [])
+    }, [isExpanded])
 
     const tab = "    " // 4 spaces
     const code = [
@@ -49,7 +51,8 @@ function IDE() {
                     <span className="ide-tab-file">hello.py</span>
                 </div>
                 <div className="ide-expand-icon-box" ref={expandIconRef}>
-                    <i className="fa-solid fa-arrows-left-right"></i>
+                    {isExpanded ? <i className="fa-solid fa-compress"></i>
+                                : <i className="fa-solid fa-expand"></i>}
                 </div>
             </div>
             <div className="ide-body">

@@ -43,7 +43,7 @@ function Intro() {
                         </h2>
                     </div>
                     <div className='intro-wrapper intro-link' ref={btnRef}>
-                        <Link className='intro-linkx' to='projects' smooth={true} duration={500}>View Projects</Link>
+                        <Link to='projects' smooth={true} duration={500}>View Projects</Link>
                     </div>
                 </div>
                 <div id='intro-content-right' className='intro-content-right' ref={ideRef}>

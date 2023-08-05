@@ -184,6 +184,7 @@ hr {
     background-color: var(--color-text);
     margin: 5px;
     border-radius: 2px;
+    transition: background-color 1s ease;
 }
 
 .dropdown-nav {
@@ -192,7 +193,7 @@ hr {
 
 .dropdown-animation {
     transform: translateY(calc(-1 * var(--dropdown-nav-height)));
-    transition: transform 0.5s;
+    transition: transform 0.5s, background-color 1s ease;
 }
 
 .dropdown-animation-active {
@@ -254,8 +255,8 @@ hr {
 /* Intro */
 
 .intro {
-    --intro-content-left-width: 40%;
-    --intro-content-right-width: 60%;
+    --intro-content-left-width: 35%;
+    --intro-content-right-width: 65%;
     padding: 10% 0;
     height: 500px;
     display: flex;
@@ -270,7 +271,7 @@ hr {
     align-items: center;
     justify-content: space-between;
     height: fit-content;
-    width: 70%;
+    width: 75%;
 }
 
 .intro-content-left {
@@ -375,7 +376,7 @@ hr {
 
 @media (max-width: 768px) {
     .intro-content-right-expand-width {
-        width: 130%;
+        width: 120%;
     }
 }
 
@@ -642,14 +643,11 @@ hr {
 .project-link {
     color: var(--color-text);
     transition: color 1s ease;
+    text-decoration: none;
 }
 
 .project-buttons i {
     transition: background-color 0.5s ease, border 1s ease;
-}
-
-.project-link {
-    text-decoration: none;
 }
 
 .project-modal, .project-link, .project-flip-icon-back-box {
@@ -956,7 +954,7 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 6px;
+    padding: 5px 8px;
     margin-bottom: 5px;
     border: solid 1.5px var(--color-card-fg);
     border-radius: 5px;
