@@ -142,15 +142,16 @@ hr {
     align-items: center;
 }
 
-.dark-light-mode-toggle-btn {
+.theme-toggle-btn {
     display: flex;
     align-items: center;
-    justify-content: center;
-    color: var(--color-text);
-    background-color: var(--color-card-fg);
+    justify-content: space-between;
+    color: black;
+    background-color: rgb(159, 159, 159);
     border-radius: 100px;
     height: 25px;
-    width: 25px;
+    width: 30px;
+    padding: 0 7px;
     scale: 120%;
     cursor: pointer;
     transition: scale 0.5s ease, background-color 1s ease, color 1s ease;
@@ -158,6 +159,28 @@ hr {
     &:hover {
         scale: 140%;
     }
+}
+
+.theme-toggle-circle {
+    width: 70%;
+    aspect-ratio: 1/1;
+    background-color: rgb(205, 205, 205);
+    border-radius: 100px;
+    transform: translateX(-5px);
+    transition: transform 0.5s ease, background-color 1s ease;
+}
+
+.theme-toggle-circle-animation {
+    transform: translateX(14px)
+}
+
+.theme-toggle-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    aspect-ratio: 1/1;
+    scale: 70%;
 }
 
 .nav-links .link {
