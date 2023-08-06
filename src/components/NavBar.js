@@ -47,8 +47,8 @@ function NavBar() {
                 <div className='nav-options'>
                     <div onClick={toggleMode} className='theme-toggle-btn'>
                         <div className='theme-toggle-circle' ref={circleRef}>
-                            {isDarkMode ? <i className="fa-solid fa-sun theme-toggle-icon"></i> 
-                                        : <i className="fa-solid fa-moon theme-toggle-icon"></i>}
+                            {isDarkMode ? <i className="fa-solid fa-moon theme-toggle-icon"></i> 
+                                        : <i className="fa-solid fa-sun theme-toggle-icon"></i>}
                         </div>
 
                     </div>
