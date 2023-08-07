@@ -156,17 +156,15 @@ function Projects() {
                 title: "Aira Chatbot",
                 content: <ProjectsModalContent
                     imgDirectory="aira-chatbot"
-                    skills={["Python", "Javascript", "React", "BeautifulSoup", "Semantic Kernel"]}
+                    skills={["Python", "Javascript", "React", "Web Scraping", "Semantic Kernel"]}
                     comments={[
-                        "During my internship with Whatnot, I was responsible for creating the frontend for Aira. ",
-                        "I also scraped various sites to enrich the existing data we had on companies to show more relevant data to users using tools like BeautifulSoup and an unofficial Bard API.",
-                        "There's no screenshots of it since it's just code.",
+                        "During my internship with Whatnot, I was responsible for creating all the frontend for Aira from scratch and do web scraping."
                     ]}
                     features={[
                         {
                             title: "Chatting with Aira",
                             subtitle: [
-                                "Users can ask Aira for tips on how they can increase the success of their job search."
+                                "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message."
                             ],
                             img: [
                                 ["aira-chatting.png", "90%"]
@@ -175,7 +173,7 @@ function Projects() {
                         {
                             title: "Job Search",
                             subtitle: [
-                                "Aira will display a carousel of job cards when users ask her to find jobs for them."
+                                "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards."
                             ],
                             img: [
                                 ["aira-job-search.png", "90%"]
@@ -184,7 +182,7 @@ function Projects() {
                         {
                             title: "Resume Analysis",
                             subtitle: [
-                                "Made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
+                                "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
                             ],
                             img: [
                                 ["aira-rich-menu.jpg", "70%"]
@@ -193,13 +191,22 @@ function Projects() {
                         {
                             title: "Aira webpages",
                             subtitle: [
-                                "Made webpages to display job details and resume feedback using React. ",
-                                "You can't see the animation, but I added some into the website to make it look nicer because I like animations :)"
+                                "I also made webpages to display job details and resume feedback using React. ",
+                                "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)"
                             ],
                             img: [
                                 ["aira-job-details.png", "80%"],
                                 ["aira-resume-feedback.png", "80%"]
                             ]
+                        },
+                        {
+                            title: "Web Scraping",
+                            subtitle: [
+                                "I created an API that would scrape various sites to enrich the existing data we had on companies to show more relevant data to users.",
+                                "Some of the tools I used were BeautifulSoup and an unofficial Bard API.",
+                                "There are no screenshots of this since it is just code."
+                            ],
+                            img: []
                         }
                     ]}
                 />

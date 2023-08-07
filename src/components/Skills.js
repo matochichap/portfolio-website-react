@@ -107,8 +107,8 @@ function Skills() {
             name: "Database",
             skills: [
                 {
-                    name: "SQLite",
-                    img: "sqlite-logo.png"
+                    name: "MySQL",
+                    img: "mysql-logo.png"
                 },
                 {
                     name: "MongoDB",

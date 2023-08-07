@@ -8,9 +8,19 @@ Colors:
 
 /* Global */
 
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
 hr {
     height: 0px;
     width: 80%;
+    border: 1px solid var(--color-text);
     margin: 0 0 0 30px;
 }
 
@@ -155,10 +165,6 @@ hr {
     scale: 120%;
     cursor: pointer;
     transition: scale 0.5s ease, background-color 1s ease, color 1s ease;
-
-    &:hover {
-        scale: 140%;
-    }
 }
 
 .theme-toggle-circle {
