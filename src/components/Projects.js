@@ -148,6 +148,88 @@ function ProjectsModalContent({ skills, comments, features, imgDirectory }) {
 function Projects() {
     const allProjects = [
         {
+            title: "TikTok Ad Moderation",
+            subtitle: "Optimally matching ads to moderators, enhancing efficiency with violation flagging and text categorisation.",
+            img: "tiktok-icon.png",
+            link: "https://devpost.com/software/igmoid-masterchefs",
+            modalContent: {
+                title: "TikTok Ad Moderation",
+                content: <ProjectsModalContent
+                    imgDirectory="tiktok-ad-moderation"
+                    skills={["Flask", "React", "ML", "Python"]}
+                    comments={[
+                        "This project was for the TikTok Hackathon Challenge 2023 which won 1st place and I mainly worked on the full stack web app to showcase our allocation models.",
+                        "This was a really interesting project to work on as it was the first ML project I worked on and it gave me some ideas for future ML projects.",
+                    ]}
+                    features={[
+                        {
+                            title: "Input form",
+                            subtitle: [
+                                "Inputs to pass into the allocation models, the main input is the video file to analyse."
+                            ],
+                            img: [
+                                ["form.png", "100%"]
+                            ]
+                        },
+                        {
+                            title: "Result page",
+                            subtitle: [
+                                "The model analyses the video and the results are displayed on this page."
+                            ],
+                            img: [
+                                ["ad-scoring.png", "100%"],
+                                ["moderator-matching.png", "100%"]
+                            ]
+                        }
+                    ]}
+                />
+            }
+        },
+        {
+            title: "PortFlow",
+            subtitle: "A full stack web app to automate combining different orders to the same shipments using machine learning.",
+            img: "portflow-icon.png",
+            link: "https://matochichap.github.io/PSA_CodeSprint/",
+            modalContent: {
+                title: "PortFlow",
+                content: <ProjectsModalContent
+                    imgDirectory="portflow"
+                    skills={["Flask", "React", "ML", "Python", "Gurobi"]}
+                    comments={[
+                        "This project was for the PSA Hackathon 2023 where I worked mostly on the backend to combine the different orders using our allocation model."
+                    ]}
+                    features={[
+                        {
+                            title: "Assign orders",
+                            subtitle: [
+                                "You can select the orders to combine which will update the incoming and outgoing shipments."
+                            ],
+                            img: [
+                                ["pending-orders.png", "100%"]
+                            ]
+                        },
+                        {
+                            title: "Incoming and Outgoing shipments",
+                            subtitle: [
+                                "Page to show all the incoming and outgoing shipments."
+                            ],
+                            img: [
+                                ["incoming-shipments.png", "100%"],
+                                ["outgoing-shipments.png", "100%"]
+                            ]
+                        },
+                        {
+                            title: "View shipment details",
+                            subtitle: [],
+                            img: [
+                                ["shipment-details.png", "100%"]
+                            ]
+                        }
+                    ]}
+                />
+            }
+        },
+        {
             title: "Aira Chatbot",
             subtitle: "A LINE AI job matching chatbot I helped develop during my internship with Whatnot Startup Studio.",
             img: "aira-icon.png",
