@@ -149,7 +149,7 @@ function Projects() {
     const allProjects = [
         {
             title: "TikTok Ad Moderation",
-            subtitle: "Optimally matching ads to moderators, enhancing efficiency with violation flagging and text categorisation.",
+            subtitle: "A full stack web app that optimally matches ads to moderators, enhancing efficiency with violation flagging and text categorisation.",
             img: "tiktok-icon.png",
             link: "https://devpost.com/software/igmoid-masterchefs",
             modalContent: {
@@ -211,7 +211,7 @@ function Projects() {
                         {
                             title: "Incoming and Outgoing shipments",
                             subtitle: [
-                                "Page to show all the incoming and outgoing shipments."
+                                "Pages to show all the incoming and outgoing shipments."
                             ],
                             img: [
                                 ["incoming-shipments.png", "100%"],
@@ -220,7 +220,9 @@ function Projects() {
                         },
                         {
                             title: "View shipment details",
-                            subtitle: [],
+                            subtitle: [
+                                "Page to show the shipment details when you click on a shipment in the incoming/outgoing shipments page."
+                            ],
                             img: [
                                 ["shipment-details.png", "100%"]
                             ]
