@@ -564,6 +564,8 @@ hr {
     height: 100%;
     transition: transform 0.8s, scale 0.5s ease;
     transform-style: preserve-3d;
+    /* fixes left side of card unclickable */
+    pointer-events: none;
 
     &:hover {
         scale: 105%;
@@ -717,6 +719,8 @@ hr {
     -webkit-backface-visibility: hidden;
     /* Safari */
     backface-visibility: hidden;
+    /* fixes left side of card unclickable */
+    pointer-events: auto;
 }
 
 @media (max-width: 1065px) {
