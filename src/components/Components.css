@@ -354,7 +354,7 @@ hr {
     display: flex;
     justify-content: flex-end;
     width: var(--intro-content-right-width);
-    transform: translateX(20%);
+    transform: translateX(15%);
     opacity: 0;
     filter: blur(5px);
     transition: transform 1s ease, opacity 0.5s ease, filter 1s ease, width 0.5s ease;
