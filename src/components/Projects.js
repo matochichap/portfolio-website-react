@@ -8,6 +8,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
     const projectCardInnerRef = useRef(null)
     const projectFrontFlipBtnRef = useRef(null)
     const projectBackFlipBtnRef = useRef(null)
+    const projectLightbulbRef = useRef(null)
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -24,16 +25,24 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
         const projectCardInner = projectCardInnerRef.current
         const frontFlipBtn = projectFrontFlipBtnRef.current
         const backFlipBtn = projectBackFlipBtnRef.current
+        const projectLightbulb = projectLightbulbRef.current
         const flipCard = () => {
             projectCardInner.classList.toggle("project-flip-card-animation")
         }
+        const removeAnimation = () => {
+            Array.from(document.getElementsByClassName('fa-bounce')).forEach((icon) => {
+                icon.classList.remove("fa-bounce")
+            })
+        }
         frontFlipBtn.addEventListener("click", flipCard)
         backFlipBtn.addEventListener("click", flipCard)
+        projectLightbulb.addEventListener("click", removeAnimation)
 
         return () => {
             observer.disconnect()
             frontFlipBtn.removeEventListener("click", flipCard)
             backFlipBtn.removeEventListener("click", flipCard)
+            projectLightbulb.removeEventListener("click", removeAnimation)
         }
     }, [])
 
@@ -47,6 +56,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                     <div className='project-title-box'>
                         <h2 className='project-title'>{project.title}</h2>
                         <div className='project-flip-icon-box'>
+                            <i ref={projectLightbulbRef} className='fa-regular fa-lightbulb fa-bounce fa-icon-highlight project-flip-icon' onClick={() => (modalOpen ? close() : open(index))}></i>
                             <i className='fa-solid fa-repeat project-flip-icon fa-icon' ref={projectFrontFlipBtnRef}></i>
                         </div>
                     </div>

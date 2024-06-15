@@ -631,6 +631,12 @@ hr {
     font-size: calc(2px + 1.5vw);
     padding: calc(2px + 0.5vw);
     cursor: pointer;
+    height: 50%;
+    aspect-ratio: 1/1;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: background-color 0.5s ease, border 1s ease;
 
     &:hover {
