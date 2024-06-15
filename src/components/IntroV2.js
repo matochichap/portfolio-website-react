@@ -17,7 +17,7 @@ function Intro() {
                 if (entry.isIntersecting) {
                     entry.target.classList.add("intro-animation")
                     // add next transiton after first plays
-                    setTimeout(nextTransition, 1000)
+                    setTimeout(nextTransition, 500)
                 }
             })
         })
