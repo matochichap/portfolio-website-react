@@ -446,6 +446,7 @@ hr {
 }
 
 .about-card h2 {
+    /* text-align: justify; */
     font-weight: 400;
     font-size: calc(10px + 0.7vw);
     line-height: calc(10px + 2vw);
@@ -749,9 +750,10 @@ a.experience-button {
 .project-title {
     width: 100%;
     height: 70%;
+    text-align: right;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     font-size: calc(5px + 1.5vw);
     margin: 0;
 }

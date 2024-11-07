@@ -123,7 +123,7 @@ function Experiences() {
             companyName: "Whatnot Startup Studio, Thailand",
             description:
                 "Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes.",
-            img: "./resources/images/project-modal-images/aira-chatbot/aira-chatting.png",
+            img: "./resources/images/modal-images/aira-chatbot/aira-chatting.png",
             link: "https://www.example.com",
             skills: [
                 "Python",

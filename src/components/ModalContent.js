@@ -57,7 +57,7 @@ function ModalFeatures({ features, imgDirectory }) {
                                         key={index}
                                         className="modal-features-image"
                                         style={{ width: width }}
-                                        src={`./resources/images/project-modal-images/${imgDirectory}/${imagePath}`}
+                                        src={`./resources/images/modal-images/${imgDirectory}/${imagePath}`}
                                         alt="feature"
                                     />
                                 )
