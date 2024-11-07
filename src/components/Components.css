@@ -656,12 +656,6 @@ a.experience-button {
         display: none;
     }
 }
-/* 
-.experience-skill-tags:has(:hover) .experience-skill-tag:not(:hover) {
-    opacity: 0.5;
-    scale: 90%;
-    filter: blur(2px);
-} */
 
 .experience-skill-tag {
     border-radius: 100px;
@@ -670,11 +664,6 @@ a.experience-button {
     background-color: var(--color-grad-start);
     transition: opacity 0.5s ease, scale 0.5s ease, filter 1s ease, color 1s ease, background-color 1s ease;
     white-space: nowrap;
-
-    /* &:hover {
-        user-select: none;
-        scale: 110%;
-    } */
 }
 
 .experience-skill {
@@ -725,7 +714,6 @@ a.experience-button {
 }
 
 .project-card-front {
-    --length: calc(12.5vw);
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -735,8 +723,8 @@ a.experience-button {
 }
 
 .project-img-box {
-    height: var(--length);
-    width: var(--length);
+    height: 70%;
+    aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -746,12 +734,11 @@ a.experience-button {
 }
 
 .project-img {
-    height: 12.5vw;
-    scale: 80%;
+    height: 80%;
 }
 
 .project-title-box {
-    height: var(--length);
+    height: 70%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -760,10 +747,11 @@ a.experience-button {
 }
 
 .project-title {
-    width: 90%;
+    width: 100%;
     height: 70%;
     display: flex;
     align-items: center;
+    justify-content: center;
     font-size: calc(5px + 1.5vw);
     margin: 0;
 }
@@ -889,10 +877,6 @@ a.experience-button {
         scale: 100%;
     }
 
-    .project-card-front {
-        --length: calc(15vw);
-    }
-
     .project-img {
         scale: 90%;
     }
@@ -987,7 +971,7 @@ a.experience-button {
 /* Modal */
 .modal {
     width: clamp(50%, 700px, 90%);
-    height: 70vh;
+    height: 85vh;
     border-radius: 12px;
     background-color: var(--color-modal);
     overflow-y: auto;

@@ -20,7 +20,7 @@ function ExperienceSkills({ skills }) {
             } else if (scrollDirection === "right") {
                 container.scrollBy({ left: scrollSpeed, behavior: "smooth" })
             }
-        }, 10)
+        }, 0)
 
         // Clear interval when scroll direction changes or component unmounts
         return () => clearInterval(scrollInterval)
@@ -46,6 +46,7 @@ function ExperienceSkills({ skills }) {
     const handleMouseLeave = () => {
         setScrollDirection(null)
     }
+
     return (
         <>
             <div
