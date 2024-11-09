@@ -115,7 +115,7 @@ function Projects() {
                 content: (
                     <ModalContent
                         imgDirectory="tiktok-ad-moderation"
-                        skills={["Flask", "React", "ML", "Python"]}
+                        skills={["Flask", "React", "Python", "Material UI"]}
                         comments={[
                             "This project was for the TikTok Hackathon Challenge 2023 which won 1st place and I mainly worked on the full stack web app to showcase our allocation models.",
                             "This was a really interesting project to work on as it was the first ML project I worked on and it gave me some ideas for future ML projects.",
@@ -154,7 +154,7 @@ function Projects() {
                 content: (
                     <ModalContent
                         imgDirectory="portflow"
-                        skills={["Flask", "React", "ML", "Python", "Gurobi"]}
+                        skills={["Flask", "React", "Python", "Gurobi"]}
                         comments={[
                             "This project was for the PSA Hackathon 2023 where I worked mostly on the backend to combine the different orders using our allocation model.",
                         ]}
@@ -188,74 +188,74 @@ function Projects() {
                 ),
             },
         },
-        {
-            title: "Aira Chatbot",
-            subtitle:
-                "A LINE AI job matching chatbot I helped develop during my internship with Whatnot Startup Studio.",
-            img: "aira-icon.png",
-            link: "https://www.helloaira.io/",
-            modalContent: {
-                title: "Aira Chatbot",
-                content: (
-                    <ModalContent
-                        imgDirectory="aira-chatbot"
-                        skills={[
-                            "Python",
-                            "Javascript",
-                            "React",
-                            "Web Scraping",
-                            "Semantic Kernel",
-                        ]}
-                        comments={[
-                            "During my internship with Whatnot, I was responsible for creating all the frontend for Aira from scratch and do web scraping.",
-                        ]}
-                        features={[
-                            {
-                                title: "Chatting with Aira",
-                                subtitle: [
-                                    "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
-                                ],
-                                img: [["aira-chatting.png", "90%"]],
-                            },
-                            {
-                                title: "Job Search",
-                                subtitle: [
-                                    "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards.",
-                                ],
-                                img: [["aira-job-search.png", "90%"]],
-                            },
-                            {
-                                title: "Resume Analysis",
-                                subtitle: [
-                                    "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
-                                ],
-                                img: [["aira-rich-menu.jpg", "70%"]],
-                            },
-                            {
-                                title: "Aira webpages",
-                                subtitle: [
-                                    "I also made webpages to display job details and resume feedback using React. ",
-                                    "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)",
-                                ],
-                                img: [
-                                    ["aira-job-details.png", "80%"],
-                                    ["aira-resume-feedback.png", "80%"],
-                                ],
-                            },
-                            {
-                                title: "Web Scraping",
-                                subtitle: [
-                                    "I created an API that would scrape various sites to enrich the existing data we had on companies to show more relevant data to users.",
-                                    "Some of the tools I used were BeautifulSoup and an unofficial Bard API.",
-                                    "There are no screenshots of this since it is just code.",
-                                ],
-                                img: [],
-                            },
-                        ]}
-                    />
-                ),
-            },
-        },
+        // {
+        //     title: "Aira Chatbot",
+        //     subtitle:
+        //         "A LINE AI job matching chatbot I helped develop during my internship with Whatnot Startup Studio.",
+        //     img: "aira-icon.png",
+        //     link: "https://www.helloaira.io/",
+        //     modalContent: {
+        //         title: "Aira Chatbot",
+        //         content: (
+        //             <ModalContent
+        //                 imgDirectory="aira-chatbot"
+        //                 skills={[
+        //                     "Python",
+        //                     "Javascript",
+        //                     "React",
+        //                     "Web Scraping",
+        //                     "Semantic Kernel",
+        //                 ]}
+        //                 comments={[
+        //                     "During my internship with Whatnot, I was responsible for creating all the frontend for Aira from scratch and do web scraping.",
+        //                 ]}
+        //                 features={[
+        //                     {
+        //                         title: "Chatting with Aira",
+        //                         subtitle: [
+        //                             "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
+        //                         ],
+        //                         img: [["aira-chatting.png", "90%"]],
+        //                     },
+        //                     {
+        //                         title: "Job Search",
+        //                         subtitle: [
+        //                             "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards.",
+        //                         ],
+        //                         img: [["aira-job-search.png", "90%"]],
+        //                     },
+        //                     {
+        //                         title: "Resume Analysis",
+        //                         subtitle: [
+        //                             "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
+        //                         ],
+        //                         img: [["aira-rich-menu.jpg", "70%"]],
+        //                     },
+        //                     {
+        //                         title: "Aira webpages",
+        //                         subtitle: [
+        //                             "I also made webpages to display job details and resume feedback using React. ",
+        //                             "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)",
+        //                         ],
+        //                         img: [
+        //                             ["aira-job-details.png", "80%"],
+        //                             ["aira-resume-feedback.png", "80%"],
+        //                         ],
+        //                     },
+        //                     {
+        //                         title: "Web Scraping",
+        //                         subtitle: [
+        //                             "I created an API that would scrape various sites to enrich the existing data we had on companies to show more relevant data to users.",
+        //                             "Some of the tools I used were BeautifulSoup and an unofficial Bard API.",
+        //                             "There are no screenshots of this since it is just code.",
+        //                         ],
+        //                         img: [],
+        //                     },
+        //                 ]}
+        //             />
+        //         ),
+        //     },
+        // },
         {
             title: "Party Website",
             subtitle:
@@ -267,8 +267,11 @@ function Projects() {
                 content: (
                     <ModalContent
                         imgDirectory="party-website"
-                        skills={["Flask", "MySQL", "HTML", "CSS"]}
-                        comments={[]}
+                        skills={["Flask", "SQLAlchemy", "HTML", "CSS"]}
+                        comments={[
+                            "This was actually an assignment for an internship application which I was able to complete within 3 days even though I was given 7 days to complete it.",
+                            "I was really happy with how it turned out since I was able to implement user authentication, CRUD functionality and also make the UI look pretty good.",
+                        ]}
                         features={[
                             {
                                 title: "User authentication",
@@ -371,44 +374,44 @@ function Projects() {
                 ),
             },
         },
-        {
-            title: "Queue App API",
-            subtitle:
-                "An API with user authentication built with MongoDB, Express and PassportJS for a larger project I'm working on.",
-            img: "queue-icon.png",
-            link: "https://github.com/matochichap/queue-app-db-api",
-            modalContent: {
-                title: "Queue App API",
-                content: (
-                    <ModalContent
-                        imgDirectory={null}
-                        skills={["Express", "MongoDB", "PassportJS", "API"]}
-                        comments={[
-                            "One of the things I hate doing is queuing.",
-                            "The idea for this project is to create an app that businesses can easily implement so that customers can spend less time queuing.",
-                            "This is still a work in progress and was more of a way for me to learn MongoDB and get familiar with Express.",
-                        ]}
-                        features={[
-                            {
-                                title: "User authentication",
-                                subtitle: [
-                                    "This API is meant to store customers' and businesses' data and they need to be authenticated before they can access that data.",
-                                    "Users need to be logged in before they can access the API routes which was done with PassportJS.",
-                                ],
-                                img: [],
-                            },
-                            {
-                                title: "Database",
-                                subtitle: [
-                                    "I used MongoDB Atlas to store the user data on the cloud so that it would be easier to scale if the project gets bigger.",
-                                ],
-                                img: [],
-                            },
-                        ]}
-                    />
-                ),
-            },
-        },
+        // {
+        //     title: "Queue App API",
+        //     subtitle:
+        //         "An API with user authentication built with MongoDB, Express and PassportJS for a larger project I'm working on.",
+        //     img: "queue-icon.png",
+        //     link: "https://github.com/matochichap/queue-app-db-api",
+        //     modalContent: {
+        //         title: "Queue App API",
+        //         content: (
+        //             <ModalContent
+        //                 imgDirectory={null}
+        //                 skills={["Express", "MongoDB", "PassportJS", "API"]}
+        //                 comments={[
+        //                     "One of the things I hate doing is queuing.",
+        //                     "The idea for this project is to create an app that businesses can easily implement so that customers can spend less time queuing.",
+        //                     "This is still a work in progress and was more of a way for me to learn MongoDB and get familiar with Express.",
+        //                 ]}
+        //                 features={[
+        //                     {
+        //                         title: "User authentication",
+        //                         subtitle: [
+        //                             "This API is meant to store customers' and businesses' data and they need to be authenticated before they can access that data.",
+        //                             "Users need to be logged in before they can access the API routes which was done with PassportJS.",
+        //                         ],
+        //                         img: [],
+        //                     },
+        //                     {
+        //                         title: "Database",
+        //                         subtitle: [
+        //                             "I used MongoDB Atlas to store the user data on the cloud so that it would be easier to scale if the project gets bigger.",
+        //                         ],
+        //                         img: [],
+        //                     },
+        //                 ]}
+        //             />
+        //         ),
+        //     },
+        // },
         {
             title: "Turtle Crossing",
             subtitle:
@@ -420,7 +423,7 @@ function Projects() {
                 content: (
                     <ModalContent
                         imgDirectory="turtle-crossing"
-                        skills={["Python", "Turtle Graphics", "OOP"]}
+                        skills={["Python", "Turtle Graphics"]}
                         comments={[
                             "This was a project I worked on while learning Python that I really enjoyed making.",
                             "There were other simple games that I made with turtle graphics but this is my favorite one.",

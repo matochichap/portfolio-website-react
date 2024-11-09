@@ -553,7 +553,7 @@ hr {
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    align-items: center;
+    align-items: baseline;
     justify-items: center;
     gap: 50px;
 }
@@ -580,22 +580,49 @@ hr {
 }
 
 .experience-title {
-    font-size: calc(16px + 0.5vw);
+    font-size: calc(12px + 0.7vw);
     margin: 0;
 }
 
 .experience-company {
-    font-size: calc(12px + 0.5vw);
+    font-size: calc(9px + 0.7vw);
     font-weight: 550;
     margin: 0;
 }
 
 .experience-description {
-    font-size: calc(9px + 0.5vw);
+    --font-size: calc(7px + 0.7vw);
+    font-size: var(--font-size);
     font-weight: 400;
     margin: 0;
     text-align: justify;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    max-height: calc(var(--font-size) * 3.7);
+    transition: max-height 1s ease;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 25px;
+        opacity: 1;
+        background: linear-gradient(to bottom, transparent, var(--color-card));
+        transition: opacity 1s ease;
+    }
+
+    &:hover {
+        max-height: 100vh;
+
+        &::after {
+            opacity: 0;
+        }
+    }
 }
+
 
 .experience-buttons {
     display: flex;
@@ -638,19 +665,19 @@ a.experience-button {
 @media (max-width: 1065px) {
     .experience-cards {
         grid-template-columns: 1fr;
-    }
-    .experience-card {
-        width: 78%;
+        --card-length: calc(80px + 15vw);
     }
 }
 
 .experience-skill-tags {
+    --skill-tag-height: clamp(30px, 5vw, 60px);
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
     align-items: center;
     position: relative;
     gap: 8px;
+    height: var(--skill-tag-height);
     width: 100%;
 
     &::-webkit-scrollbar {
@@ -665,6 +692,28 @@ a.experience-button {
     background-color: var(--color-grad-start);
     transition: opacity 0.5s ease, scale 0.5s ease, filter 1s ease, color 1s ease, background-color 1s ease;
     white-space: nowrap;
+}
+
+.experience-logo {
+    overflow: hidden;
+    flex-shrink: 0;
+    height: var(--skill-tag-height);
+    max-width: calc(var(--skill-tag-height) * 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    background-color: var(--color-card-fg);
+    border-radius: 10px;
+    transition: background-color 1s ease, max-width 2s ease;
+    gap: calc(var(--skill-tag-height) * 0.15 + 1.1px);
+    padding: 0 calc(var(--skill-tag-height) * 0.15);
+    &:hover {
+        max-width: 1000px;
+    }
+}
+
+.experience-skill-logo {
+    height: 70%;
 }
 
 .experience-skill {
@@ -871,7 +920,7 @@ a.experience-button {
 
 @media (max-width: 1065px) {
     .project-cards {
-        --card-length: calc(55px + 15vw);
+        --card-length: calc(80px + 15vw);
         grid-template-columns: 1fr;
     }
 
@@ -1023,32 +1072,34 @@ a.experience-button {
 
 .modal-project-skill-tags {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
     align-items: center;
     position: relative;
+    justify-content: flex-start;
+    gap: 8px;
 }
 
 .modal-project-skill-tag {
     border: 2px solid var(--color-project-skill-tag-outline);
     border-radius: 100px;
-    margin: 5px 0.5vw;
     padding: 10px 20px;
     color: var(--color-text);
     background: linear-gradient(112.1deg, var(--color-grad-start) 11.4%, var(--color-grad-end) 70.2%);
     transition: opacity 0.5s ease, scale 0.5s ease, filter 1s ease;
+    white-space: nowrap;
 
-    &:hover {
+    /* &:hover {
         user-select: none;
         scale: 110%;
-    }
+    } */
 }
 
-.modal-project-skill-tags:has(:hover) .modal-project-skill-tag:not(:hover) {
+/* .modal-project-skill-tags:has(:hover) .modal-project-skill-tag:not(:hover) {
     opacity: 0.5;
     scale: 90%;
     filter: blur(2px);
-}
+} */
 
 .modal-project-skill {
     margin: 0;
@@ -1150,7 +1201,7 @@ a.experience-button {
 
 .ide-line-number {
     width: 20px;
-    margin: 0 7px 0 0 ;
+    margin: 0 7px 0 0;
 }
 
 .ide-line-text-box {

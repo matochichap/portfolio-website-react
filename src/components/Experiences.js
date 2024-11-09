@@ -3,6 +3,7 @@ import Modal from "./Modal"
 import ModalContent from "./ModalContent"
 import { React, useState, useEffect, useRef } from "react"
 import { AnimatePresence } from "framer-motion"
+import { skillImages } from "../utils/constants"
 
 function ExperienceSkills({ skills }) {
     const skillTagsRef = useRef(null)
@@ -33,9 +34,9 @@ function ExperienceSkills({ skills }) {
         const mouseX = event.clientX
 
         // Set scroll direction based on mouse position
-        if (mouseX < left + width * 0.5) {
+        if (mouseX < left + width * 0.25) {
             setScrollDirection("left")
-        } else if (mouseX > right - width * 0.5) {
+        } else if (mouseX > right - width * 0.25) {
             setScrollDirection("right")
         } else {
             setScrollDirection(null)
@@ -57,9 +58,19 @@ function ExperienceSkills({ skills }) {
             >
                 {skills.map((skill, index) => {
                     return (
-                        <div key={index} className="experience-skill-tag">
-                            <p className="experience-skill">{skill}</p>
-                        </div>
+                        <>
+                            <div key={index} className="experience-logo">
+                                <img
+                                    className="experience-skill-logo"
+                                    src={`./resources/images/skill-logos/${skillImages[skill]}`}
+                                    alt="skill-logo"
+                                />
+                                <p className="experience-skill">{skill}</p>
+                            </div>
+                            {/* <div key={index} className="experience-skill-tag">
+                                <p className="experience-skill">{skill}</p>
+                            </div> */}
+                        </>
                     )
                 })}
             </div>
@@ -123,14 +134,232 @@ function Experiences() {
             companyName: "Whatnot Startup Studio, Thailand",
             description:
                 "Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes.",
-            img: "./resources/images/modal-images/aira-chatbot/aira-chatting.png",
+            img: "./resources/images/experience-images/test.png",
+            link: "https://www.example.com",
+            skills: ["Python", "Javascript", "React", "Selenium"],
+            modalContent: {
+                title: "Aira Chatbot",
+                content: (
+                    <ModalContent
+                        imgDirectory="aira-chatbot"
+                        skills={[
+                            "Python",
+                            "Javascript",
+                            "React",
+                            "Web Scraping",
+                            "Semantic Kernel",
+                            "Python",
+                            "Javascript",
+                            "React",
+                            "Web Scraping",
+                            "Semantic Kernel",
+                        ]}
+                        comments={[
+                            "During my internship with Whatnot, I was responsible for creating all the frontend for Aira from scratch and do web scraping.",
+                        ]}
+                        features={[
+                            {
+                                title: "Chatting with Aira",
+                                subtitle: [
+                                    "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
+                                ],
+                                img: [["aira-chatting.png", "90%"]],
+                            },
+                            {
+                                title: "Job Search",
+                                subtitle: [
+                                    "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards.",
+                                ],
+                                img: [["aira-job-search.png", "90%"]],
+                            },
+                            {
+                                title: "Resume Analysis",
+                                subtitle: [
+                                    "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
+                                ],
+                                img: [["aira-rich-menu.jpg", "70%"]],
+                            },
+                            {
+                                title: "Aira webpages",
+                                subtitle: [
+                                    "I also made webpages to display job details and resume feedback using React. ",
+                                    "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)",
+                                ],
+                                img: [
+                                    ["aira-job-details.png", "80%"],
+                                    ["aira-resume-feedback.png", "80%"],
+                                ],
+                            },
+                            {
+                                title: "Web Scraping",
+                                subtitle: [
+                                    "I created an API that would scrape various sites to enrich the existing data we had on companies to show more relevant data to users.",
+                                    "Some of the tools I used were BeautifulSoup and an unofficial Bard API.",
+                                    "There are no screenshots of this since it is just code.",
+                                ],
+                                img: [],
+                            },
+                        ]}
+                    />
+                ),
+            },
+        },
+        {
+            title: "Software Developer",
+            companyName: "Whatnot Startup Studio, Thailand",
+            description:
+                "Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes. Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes. Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes.",
+            img: "./resources/images/experience-images/test.png",
+            link: "https://www.example.com",
+            skills: ["Python", "Javascript", "React", "Selenium"],
+            modalContent: {
+                title: "Aira Chatbot",
+                content: (
+                    <ModalContent
+                        imgDirectory="aira-chatbot"
+                        skills={[
+                            "Python",
+                            "Javascript",
+                            "React",
+                            "Web Scraping",
+                            "Semantic Kernel",
+                        ]}
+                        comments={[
+                            "During my internship with Whatnot, I was responsible for creating all the frontend for Aira from scratch and do web scraping.",
+                        ]}
+                        features={[
+                            {
+                                title: "Chatting with Aira",
+                                subtitle: [
+                                    "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
+                                ],
+                                img: [["aira-chatting.png", "90%"]],
+                            },
+                            {
+                                title: "Job Search",
+                                subtitle: [
+                                    "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards.",
+                                ],
+                                img: [["aira-job-search.png", "90%"]],
+                            },
+                            {
+                                title: "Resume Analysis",
+                                subtitle: [
+                                    "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
+                                ],
+                                img: [["aira-rich-menu.jpg", "70%"]],
+                            },
+                            {
+                                title: "Aira webpages",
+                                subtitle: [
+                                    "I also made webpages to display job details and resume feedback using React. ",
+                                    "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)",
+                                ],
+                                img: [
+                                    ["aira-job-details.png", "80%"],
+                                    ["aira-resume-feedback.png", "80%"],
+                                ],
+                            },
+                            {
+                                title: "Web Scraping",
+                                subtitle: [
+                                    "I created an API that would scrape various sites to enrich the existing data we had on companies to show more relevant data to users.",
+                                    "Some of the tools I used were BeautifulSoup and an unofficial Bard API.",
+                                    "There are no screenshots of this since it is just code.",
+                                ],
+                                img: [],
+                            },
+                        ]}
+                    />
+                ),
+            },
+        },
+        {
+            title: "Software Developer",
+            companyName: "Whatnot Startup Studio, Thailand",
+            description:
+                "Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes.",
+            img: "./resources/images/experience-images/test.png",
+            link: "https://www.example.com",
+            skills: ["Python", "Javascript", "React", "Selenium"],
+            modalContent: {
+                title: "Aira Chatbot",
+                content: (
+                    <ModalContent
+                        imgDirectory="aira-chatbot"
+                        skills={[
+                            "Python",
+                            "Javascript",
+                            "React",
+                            "Web Scraping",
+                            "Semantic Kernel",
+                        ]}
+                        comments={[
+                            "During my internship with Whatnot, I was responsible for creating all the frontend for Aira from scratch and do web scraping.",
+                        ]}
+                        features={[
+                            {
+                                title: "Chatting with Aira",
+                                subtitle: [
+                                    "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
+                                ],
+                                img: [["aira-chatting.png", "90%"]],
+                            },
+                            {
+                                title: "Job Search",
+                                subtitle: [
+                                    "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards.",
+                                ],
+                                img: [["aira-job-search.png", "90%"]],
+                            },
+                            {
+                                title: "Resume Analysis",
+                                subtitle: [
+                                    "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
+                                ],
+                                img: [["aira-rich-menu.jpg", "70%"]],
+                            },
+                            {
+                                title: "Aira webpages",
+                                subtitle: [
+                                    "I also made webpages to display job details and resume feedback using React. ",
+                                    "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)",
+                                ],
+                                img: [
+                                    ["aira-job-details.png", "80%"],
+                                    ["aira-resume-feedback.png", "80%"],
+                                ],
+                            },
+                            {
+                                title: "Web Scraping",
+                                subtitle: [
+                                    "I created an API that would scrape various sites to enrich the existing data we had on companies to show more relevant data to users.",
+                                    "Some of the tools I used were BeautifulSoup and an unofficial Bard API.",
+                                    "There are no screenshots of this since it is just code.",
+                                ],
+                                img: [],
+                            },
+                        ]}
+                    />
+                ),
+            },
+        },
+        {
+            title: "Software Developer",
+            companyName: "Whatnot Startup Studio, Thailand",
+            description:
+                "Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes. Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes. Developed a web application for a client using React, Node.js, and MongoDB. The application allows users to create and share their own recipes.",
+            img: "./resources/images/experience-images/test.png",
             link: "https://www.example.com",
             skills: [
                 "Python",
                 "Javascript",
                 "React",
-                "Web Scraping",
-                "Semantic Kernel",
+                "Selenium",
+                "Python",
+                "Javascript",
+                "React",
+                "Selenium",
             ],
             modalContent: {
                 title: "Aira Chatbot",
