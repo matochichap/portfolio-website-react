@@ -676,7 +676,7 @@ a.experience-button {
 }
 
 .experience-skill-tags {
-    --skill-tag-height: clamp(30px, 5vw, 60px);
+    --skill-tag-height: clamp(30px, 6vw, 60px);
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -989,12 +989,13 @@ a.experience-button {
 }
 
 .contact-link-box:hover {
-    scale: 100%;
+    scale: 110%;
 }
 
 .contact-links:has(:hover) .contact-link-box:not(:hover) {
+    scale: 90%;
     opacity: 0.4;
-    scale: 80%;
+    filter: blur(3px);
 }
 
 @media (max-width: 768px) {

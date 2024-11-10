@@ -167,7 +167,7 @@ function Experiences() {
                                 title: "Webhooks for real-time updates",
                                 subtitle: [
                                     "A problem for Leasi's customers was that they needed to routinely fetch data from our APIs to get notified of updates.",
-                                    "The webhooks system that I implemented allowed any events to be tracked and sent to the customer's server in immediately.",
+                                    "The webhooks system that I implemented allowed any events to be tracked and sent to the customer's server immediately.",
                                 ],
                                 img: [["leasi-webhooks.png", "100%"]],
                                 video: [],
@@ -226,7 +226,7 @@ function Experiences() {
                             {
                                 title: "WebRTC Connection via Websocket",
                                 subtitle: [
-                                    "The diagram below shows a simplified flow of the WebRTC communication flow between the RobiButler robot and the user.",
+                                    "The diagram below shows a simplified flow of the WebRTC communication flow between the RobiButler and the user.",
                                     "The WebRTC connection allows the user to see the robot's camera feed and send commands to the robot.",
                                     "In the case of the demo, the camera is simulated by a webcam feed, but can be easily replaced with the robot's camera feed.",
                                 ],
@@ -283,7 +283,7 @@ function Experiences() {
                                 title: "Image Processing with Bioformats and OpenSlide",
                                 subtitle: [
                                     "A key part of Qritive's platform is the ability to view and analyze medical images.",
-                                    "I worked on integrating Bioformats and OpenSlide to allow the platform to read and display various image formats.",
+                                    "I worked on integrating medical imaging APIs like Bioformats and OpenSlide, to allow the platform to read and display various image formats.",
                                     "These image formats include DICOM, SVS, and other common medical imaging formats.",
                                 ],
                                 img: [["qritive-openslide-images.png", "100%"]],
@@ -344,6 +344,7 @@ function Experiences() {
                             {
                                 title: "Chatting with Aira",
                                 subtitle: [
+                                    "I created an Azure function that would handle the chatbot's responses to user queries.",
                                     "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
                                 ],
                                 img: [["aira-chatting.png", "90%"]],
@@ -352,7 +353,7 @@ function Experiences() {
                             {
                                 title: "Job Search",
                                 subtitle: [
-                                    "When you ask Aira for a list of jobs, my Azure function will display a carousel of job cards.",
+                                    "When you ask Aira for a list of jobs, the chatbot will display a carousel of job cards.",
                                 ],
                                 img: [["aira-job-search.png", "90%"]],
                                 video: [],
@@ -445,3 +446,4 @@ function Experiences() {
 }
 
 export default Experiences
+export { ExperienceSkills }

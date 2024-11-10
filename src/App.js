@@ -4,7 +4,7 @@ import Buffer from "./components/Buffer"
 // import Intro from './components/Intro'
 import IntroV2 from "./components/IntroV2"
 import About from "./components/About"
-import Skills from "./components/Skills"
+// import Skills from "./components/Skills"
 import Experiences from "./components/Experiences"
 import Projects from "./components/Projects"
 import Contact from "./components/Contact"
@@ -20,8 +20,8 @@ function App() {
             <Experiences></Experiences>
             <Buffer id="projects"></Buffer>
             <Projects></Projects>
-            <Buffer id="skills"></Buffer>
-            <Skills></Skills>
+            {/* <Buffer id="skills"></Buffer>
+            <Skills></Skills> */}
             <Buffer id="contact"></Buffer>
             <Contact></Contact>
         </>

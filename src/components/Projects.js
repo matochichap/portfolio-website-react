@@ -115,7 +115,7 @@ function Projects() {
                 content: (
                     <ModalContent
                         directory="tiktok-ad-moderation"
-                        skills={["Flask", "React", "Python", "Material UI"]}
+                        skills={["Flask", "React", "Python", "MaterialUI"]}
                         comments={[
                             "This project was for the TikTok Hackathon Challenge 2023 which won 1st place and I mainly worked on the full stack web app to showcase our allocation models.",
                             "This was a really interesting project to work on as it was the first ML project I worked on and it gave me some ideas for future ML projects.",
@@ -253,7 +253,7 @@ function Projects() {
                         directory="transfer-netflix-profile"
                         skills={["Python", "Pandas", "Selenium"]}
                         comments={[
-                            "This project was created because I could not find a way to transfer all the shows I watched on Netflix to another profile.",
+                            "I decided to work on this project because I could not find a way to transfer all the shows I watched on Netflix to another profile.",
                             "Netflix allows you to download your watch history as a csv file so I used pandas to import and clean the data, and then used Selenium to add all the shows to the new profile.",
                             "Unfortunately, I can't use the bot right now since I cancelled my subscription so my bot didn't get very far into the page.",
                         ]}
@@ -369,7 +369,7 @@ function Projects() {
                 content: (
                     <ModalContent
                         directory="turtle-crossing"
-                        skills={["Python", "Turtle Graphics"]}
+                        skills={["Python", "TurtleGraphics"]}
                         comments={[
                             "This was a project I worked on while learning Python that I really enjoyed making.",
                             "There were other simple games that I made with turtle graphics but this is my favorite one.",

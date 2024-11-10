@@ -93,14 +93,14 @@ function NavBar() {
                             >
                                 Projects
                             </Link>
-                            <Link
+                            {/* <Link
                                 className="link"
                                 to="skills"
                                 smooth={true}
                                 duration={500}
                             >
                                 Skills
-                            </Link>
+                            </Link> */}
                             <Link
                                 className="link"
                                 to="contact"
@@ -142,14 +142,14 @@ function NavBar() {
                     >
                         Projects
                     </Link>
-                    <Link
+                    {/* <Link
                         className="link"
                         to="skills"
                         smooth={true}
                         duration={500}
                     >
                         Skills
-                    </Link>
+                    </Link> */}
                     <Link
                         className="link"
                         to="contact"

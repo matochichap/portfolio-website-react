@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { ExperienceSkills } from "./Experiences"
 
 function ModalSkills({ skills }) {
     const skillTagsRef = useRef(null)
@@ -45,7 +46,8 @@ function ModalSkills({ skills }) {
     return (
         <>
             <h3 className="modal-heading">Skills</h3>
-            <div
+            <ExperienceSkills skills={skills}></ExperienceSkills>
+            {/* <div
                 className="modal-project-skill-tags"
                 ref={skillTagsRef}
                 onMouseMove={handleMouseMove}
@@ -60,7 +62,7 @@ function ModalSkills({ skills }) {
                         </div>
                     )
                 })}
-            </div>
+            </div> */}
         </>
     )
 }
