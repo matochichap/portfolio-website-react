@@ -82,10 +82,10 @@ function ModalComments({ comments }) {
     )
 }
 
-function ModalFeatures({ features, imgDirectory }) {
+function ModalFeatures({ features, directory, showHeader }) {
     return (
         <>
-            <h3 className="modal-heading">Features</h3>
+            {showHeader ? <h3 className="modal-heading">Features</h3> : null}
             {features.map((feature, index) => {
                 return (
                     <div key={index} className="modal-features-card">
@@ -97,17 +97,35 @@ function ModalFeatures({ features, imgDirectory }) {
                                 </p>
                             )
                         })}
-                        <div className="modal-features-images">
+                        <div className="modal-features-medias">
                             {feature.img.map((image, index) => {
                                 const [imagePath, width] = image
                                 return (
                                     <img
                                         key={index}
-                                        className="modal-features-image"
+                                        className="modal-features-media"
                                         style={{ width: width }}
-                                        src={`./resources/images/modal-images/${imgDirectory}/${imagePath}`}
+                                        src={`./resources/images/modal-images/${directory}/${imagePath}`}
                                         alt="feature"
                                     />
+                                )
+                            })}
+                        </div>
+                        <div className="modal-features-medias">
+                            {feature.video.map((video, index) => {
+                                const [videoPath, width] = video
+                                return (
+                                    <video
+                                        key={index}
+                                        className="modal-features-media"
+                                        style={{ width: width }}
+                                        controls
+                                    >
+                                        <source
+                                            src={`./resources/videos/modal-videos/${directory}/${videoPath}`}
+                                            type="video/mp4"
+                                        />
+                                    </video>
                                 )
                             })}
                         </div>
@@ -118,7 +136,7 @@ function ModalFeatures({ features, imgDirectory }) {
     )
 }
 
-function ModalContent({ skills, comments, features, imgDirectory }) {
+function ModalContent({ skills, comments, features, directory }) {
     return (
         <>
             {skills.length > 0 ? <ModalSkills skills={skills} /> : null}
@@ -126,7 +144,8 @@ function ModalContent({ skills, comments, features, imgDirectory }) {
             {features.length > 0 ? (
                 <ModalFeatures
                     features={features}
-                    imgDirectory={imgDirectory}
+                    directory={directory}
+                    showHeader={skills.length > 0 || comments.length > 0}
                 />
             ) : null}
         </>
