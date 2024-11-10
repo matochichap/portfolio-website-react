@@ -1,4 +1,5 @@
 export const skillImages = {
+    Azure: "azure-logo.png",
     BeautifulSoup: "bs4-logo.png",
     CSS: "css-logo.png",
     Express: "express-logo.png",
@@ -7,6 +8,7 @@ export const skillImages = {
     HTML: "html-logo.png",
     Java: "java-logo.png",
     Javascript: "js-logo.png",
+    LineAPI: "line-api-logo.png",
     MongoDB: "mongodb-logo.png",
     MySQL: "mysql-logo.png",
     Node: "node-logo.png",

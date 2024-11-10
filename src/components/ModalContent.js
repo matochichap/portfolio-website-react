@@ -121,7 +121,7 @@ function ModalFeatures({ features, imgDirectory }) {
 function ModalContent({ skills, comments, features, imgDirectory }) {
     return (
         <>
-            <ModalSkills skills={skills} />
+            {skills.length > 0 ? <ModalSkills skills={skills} /> : null}
             {comments.length > 0 ? <ModalComments comments={comments} /> : null}
             {features.length > 0 ? (
                 <ModalFeatures
