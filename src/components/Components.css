@@ -139,15 +139,17 @@ hr {
 
 .main-nav {
     display: flex;
+    width: 70vw;
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 3vh;
+    left: calc(15vw - 20px);
     right: 0;
     z-index: 2;
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
     background-color: var(--color-card);
+    border-radius: 20px;
     transition: background-color 1s ease;
 }
 
@@ -162,6 +164,7 @@ hr {
 
 .nav-options {
     display: flex;
+    gap: 20px;
     align-items: center;
 }
 
@@ -202,10 +205,14 @@ hr {
     scale: 70%;
 }
 
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
 .nav-links .link {
     font-size: calc(13px + 0.3vw);
     font-weight: 500;
-    margin-left: calc(20px + 1vw);
     text-decoration: none;
     cursor: pointer;
     transition: opacity 0.5s ease;
@@ -233,15 +240,6 @@ hr {
     display: none;
 }
 
-.dropdown-animation {
-    transform: translateY(calc(-1 * var(--dropdown-nav-height)));
-    transition: transform 0.5s, background-color 1s ease;
-}
-
-.dropdown-animation-active {
-    transform: translateY(0);
-}
-
 @media (max-width: 768px) {
     .navbar {
         --main-nav-height: 20px;
@@ -261,19 +259,34 @@ hr {
     }
 
     .dropdown-nav {
-        --dropdown-nav-height: 170px;
-        height: var(--dropdown-nav-height);
+        --dropdown-nav-height: var(--main-nav-height);
+        max-height: calc(var(--dropdown-nav-height) + (15px * 2));
+        width: calc(70vw + 40px);
+        overflow-y: hidden;
         position: fixed;
-        top: 50px;
-        left: 0;
-        right: 0;
+        top: 3vh;
+        left: calc(15vw - 20px);
         z-index: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        gap: 10px;
         align-items: center;
+        border-radius: 20px;
         background-color: var(--color-card);
         opacity: 0.9;
+        transition: max-height 1s ease, background-color 1s ease;
+    }
+
+    .dropdown-nav-top-buffer {
+        height: calc(var(--dropdown-nav-height) + (15px * 2));
+    }
+
+    .dropdown-nav-bottom-buffer {
+        height: 5px;
+    }
+
+    .dropdown-nav-expanded {
+        max-height: 100vh;
     }
 
     .dropdown-nav .link {

@@ -7,6 +7,7 @@ function NavBar() {
         window.matchMedia("(prefers-color-scheme: dark)").matches
     )
     const circleRef = useRef(null)
+    const dropdownRef = useRef(null)
     const root = document.getElementById("root")
     // set mode according to user theme setting
     isDarkMode
@@ -20,24 +21,17 @@ function NavBar() {
         setIsDarkMode(!isDarkMode)
     }
 
+    const toggleDropdown = () => {
+        dropdownRef.current.classList.toggle("dropdown-nav-expanded")
+    }
+
     useEffect(() => {
-        // dropdown animation when hamburgerBtn is pressed
-        const hamburgerBtn = document.querySelector(".hamburger-btn")
-        const dropDownNav = document.querySelector(".dropdown-animation")
-        const toggleDropdown = () => {
-            dropDownNav.classList.toggle("dropdown-animation-active")
+        const closeDropdown = () => {
+            dropdownRef.current.classList.remove("dropdown-nav-expanded")
         }
-        hamburgerBtn.addEventListener("click", toggleDropdown)
-
-        // close dropdown bar when scrolling
-        const removeDropdown = () => {
-            dropDownNav.classList.remove("dropdown-animation-active")
-        }
-        document.addEventListener("scroll", removeDropdown)
-
+        document.addEventListener("scroll", closeDropdown)
         return () => {
-            hamburgerBtn.removeEventListener("click", toggleDropdown)
-            document.removeEventListener("scroll", removeDropdown)
+            document.removeEventListener("scroll", closeDropdown)
         }
     }, [])
 
@@ -56,18 +50,6 @@ function NavBar() {
                         </Link>
                     </div>
                     <div className="nav-options">
-                        <div onClick={toggleMode} className="theme-toggle-btn">
-                            <div
-                                className="theme-toggle-circle"
-                                ref={circleRef}
-                            >
-                                {isDarkMode ? (
-                                    <i className="fa-solid fa-moon theme-toggle-icon"></i>
-                                ) : (
-                                    <i className="fa-solid fa-sun theme-toggle-icon"></i>
-                                )}
-                            </div>
-                        </div>
                         <div className="nav-links">
                             <Link
                                 className="link"
@@ -110,14 +92,27 @@ function NavBar() {
                                 Contact
                             </Link>
                         </div>
-                        <div className="hamburger-btn">
+                        <div className="hamburger-btn" onClick={toggleDropdown}>
                             <div className="hamburger-line"></div>
                             <div className="hamburger-line"></div>
                             <div className="hamburger-line"></div>
                         </div>
+                        <div onClick={toggleMode} className="theme-toggle-btn">
+                            <div
+                                className="theme-toggle-circle"
+                                ref={circleRef}
+                            >
+                                {isDarkMode ? (
+                                    <i className="fa-solid fa-moon theme-toggle-icon"></i>
+                                ) : (
+                                    <i className="fa-solid fa-sun theme-toggle-icon"></i>
+                                )}
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="dropdown-nav dropdown-animation">
+                <div ref={dropdownRef} className="dropdown-nav">
+                    <div className="dropdown-nav-top-buffer"></div>
                     <Link
                         className="link"
                         to="about"
@@ -158,6 +153,7 @@ function NavBar() {
                     >
                         Contact
                     </Link>
+                    <div className="dropdown-nav-bottom-buffer"></div>
                 </div>
             </nav>
         </>
