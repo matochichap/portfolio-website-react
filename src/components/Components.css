@@ -331,12 +331,12 @@ hr {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: fit-content;
+    height: 90%;
     width: 75%;
 }
 
 .intro-content-left {
-    height: 450px;
+    height: 100%;
     width: var(--intro-content-left-width);
     display: flex;
     flex-direction: column;
@@ -384,6 +384,7 @@ hr {
 .intro-content-right {
     display: flex;
     justify-content: flex-end;
+    height: 100%;
     width: var(--intro-content-right-width);
     transform: translateX(15%);
     opacity: 0;
@@ -413,15 +414,14 @@ hr {
     }
     .intro-content {
         flex-direction: column;
+        gap: 20px;
     }
     .intro-content-left {
         width: 100%;
     }
     .intro-content-right {
+        height: 70%;
         width: 100%;
-    }
-    .intro-content-left {
-        height: 400px;
     }
     .intro-title {
         font-size: calc(50px + 4vw);
@@ -1162,12 +1162,12 @@ a.experience-button {
 
 .ide {
     --ide-border-radius: 10px;
-    height: fit-content;
+    height: 100%;
     width: 90%;
     background-color: var(--color-card);
     border-radius: var(--ide-border-radius);
     transition: background-color 1s ease;
-    overflow-x: scroll;
+    overflow: auto;
 }
 
 .ide-tabs {
@@ -1183,12 +1183,25 @@ a.experience-button {
     transition: background-color 1s ease;
 }
 
+.ide-files {
+    display: flex;
+    flex-direction: row;
+    gap: 7px;
+}
+
 .ide-tab {
     width: fit-content;
     padding: 7px 12px;
     border-radius: var(--ide-border-radius) var(--ide-border-radius) 0 0;
     background-color: var(--color-card);
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, opacity 1s ease;
+    cursor: pointer;
+    background-color: var(--color-gh-nav);
+    opacity: 0.5;
+}
+.ide-tab-selected {
+    background-color: var(--color-card);
+    opacity: 1;
 }
 
 .ide-tab-file {
