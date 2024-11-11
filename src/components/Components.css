@@ -135,14 +135,16 @@ hr {
 
 /* NavBar */
 
-/* .navbar */
+.navbar {
+    --main-nav-width: 75vw;
+}
 
 .main-nav {
     display: flex;
-    width: 70vw;
+    width: var(--main-nav-width);
     position: fixed;
     top: 3vh;
-    left: calc(15vw - 20px);
+    left: calc((100vw - var(--main-nav-width)) / 2 - 20px);
     right: 0;
     z-index: 2;
     justify-content: space-between;
@@ -243,10 +245,14 @@ hr {
 @media (max-width: 768px) {
     .navbar {
         --main-nav-height: 20px;
+        --main-nav-width: 70vw;
     }
 
     .main-nav {
         height: var(--main-nav-height);
+        width: var(--main-nav-width);
+        top: 3vh;
+        left: calc((100vw - var(--main-nav-width)) / 2 - 20px);
     }
 
     .nav-links {
@@ -255,17 +261,16 @@ hr {
 
     .hamburger-btn {
         display: block;
-        margin-left: 20px;
     }
 
     .dropdown-nav {
         --dropdown-nav-height: var(--main-nav-height);
         max-height: calc(var(--dropdown-nav-height) + (15px * 2));
-        width: calc(70vw + 40px);
+        width: calc(var(--main-nav-width) + 20px * 2);
         overflow-y: hidden;
         position: fixed;
         top: 3vh;
-        left: calc(15vw - 20px);
+        left: calc((100vw - var(--main-nav-width)) / 2 - 20px);
         z-index: 1;
         display: flex;
         flex-direction: column;
