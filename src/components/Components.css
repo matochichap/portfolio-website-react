@@ -410,6 +410,7 @@ hr {
 
 @media (max-width: 1190px) {
     .intro {
+        --intro-content-right-height: 62%;
         height: 800px;
     }
     .intro-content {
@@ -417,10 +418,11 @@ hr {
         gap: 20px;
     }
     .intro-content-left {
+        height: calc(100% - var(--intro-content-right-height));
         width: 100%;
     }
     .intro-content-right {
-        height: 70%;
+        height: var(--intro-content-right-height);
         width: 100%;
     }
     .intro-title {
