@@ -264,8 +264,7 @@ hr {
     }
 
     .dropdown-nav {
-        --dropdown-nav-height: var(--main-nav-height);
-        max-height: calc(var(--dropdown-nav-height) + (15px * 2));
+        max-height: calc(var(--main-nav-height) + (15px * 2));
         width: calc(var(--main-nav-width) + 20px * 2);
         overflow-y: hidden;
         position: fixed;
@@ -283,11 +282,13 @@ hr {
     }
 
     .dropdown-nav-top-buffer {
-        height: calc(var(--dropdown-nav-height) + (15px * 2));
+        height: calc(var(--main-nav-height) + (15px * 2));
+        flex-shrink: 0;
     }
 
     .dropdown-nav-bottom-buffer {
         height: 5px;
+        flex-shrink: 0;
     }
 
     .dropdown-nav-expanded {
