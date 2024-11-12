@@ -153,7 +153,7 @@ hr {
     background-color: var(--color-card);
     border-radius: 20px;
     border: solid 2px var(--color-card-fg);
-    transition: background-color 1s ease;
+    transition: background-color 1s ease, border 1s ease;
 }
 
 .nav-logo {
@@ -241,7 +241,6 @@ hr {
 
 .dropdown-nav {
     display: none;
-    border: solid 2px var(--color-card-fg);
 }
 
 @media (max-width: 768px) {
@@ -280,7 +279,8 @@ hr {
         border-radius: 20px;
         background-color: var(--color-card);
         opacity: 0.9;
-        transition: max-height 1s ease, background-color 1s ease;
+        border: solid 2px var(--color-card-fg);
+        transition: max-height 1s ease, background-color 1s ease, border 1s ease;
     }
 
     .dropdown-nav-top-buffer {
@@ -1223,7 +1223,7 @@ a.experience-button {
     border: solid 1.5px var(--color-card-fg);
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, border 1s ease;
     display: none;
     &:hover {
         background-color: var(--color-card-fg);
