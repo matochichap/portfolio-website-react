@@ -152,6 +152,7 @@ hr {
     padding: 15px 20px;
     background-color: var(--color-card);
     border-radius: 20px;
+    border: solid 2px var(--color-card-fg);
     transition: background-color 1s ease;
 }
 
@@ -240,6 +241,7 @@ hr {
 
 .dropdown-nav {
     display: none;
+    border: solid 2px var(--color-card-fg);
 }
 
 @media (max-width: 768px) {
