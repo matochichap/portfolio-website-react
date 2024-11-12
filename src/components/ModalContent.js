@@ -43,7 +43,7 @@ function ModalFeatures({ features, directory, showHeader }) {
                         })}
                         <div className="modal-features-medias">
                             {feature.img.map((image, index) => {
-                                const [imagePath, width] = image
+                                const { imagePath, width } = image
                                 return (
                                     <img
                                         key={index}

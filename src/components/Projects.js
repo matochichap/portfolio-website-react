@@ -126,7 +126,12 @@ function Projects() {
                                 subtitle: [
                                     "Inputs to pass into the allocation models, the main input is the video file to analyse.",
                                 ],
-                                img: [["form.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "form.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -135,8 +140,14 @@ function Projects() {
                                     "The model analyses the video and the results are displayed on this page.",
                                 ],
                                 img: [
-                                    ["ad-scoring.png", "100%"],
-                                    ["moderator-matching.png", "100%"],
+                                    {
+                                        imagePath: "ad-scoring.png",
+                                        width: "100%",
+                                    },
+                                    {
+                                        imagePath: "moderator-matching.png",
+                                        width: "100%",
+                                    },
                                 ],
                                 video: [],
                             },
@@ -166,7 +177,12 @@ function Projects() {
                                 subtitle: [
                                     "You can select the orders to combine which will update the incoming and outgoing shipments.",
                                 ],
-                                img: [["pending-orders.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "pending-orders.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -175,8 +191,14 @@ function Projects() {
                                     "Pages to show all the incoming and outgoing shipments.",
                                 ],
                                 img: [
-                                    ["incoming-shipments.png", "100%"],
-                                    ["outgoing-shipments.png", "100%"],
+                                    {
+                                        imagePath: "incoming-shipments.png",
+                                        width: "100%",
+                                    },
+                                    {
+                                        imagePath: "outgoing-shipments.png",
+                                        width: "100%",
+                                    },
                                 ],
                                 video: [],
                             },
@@ -185,7 +207,12 @@ function Projects() {
                                 subtitle: [
                                     "Page to show the shipment details when you click on a shipment in the incoming/outgoing shipments page.",
                                 ],
-                                img: [["shipment-details.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "shipment-details.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                         ]}
@@ -215,7 +242,12 @@ function Projects() {
                                 subtitle: [
                                     "Simple login and register page to create and manage users' profiles.",
                                 ],
-                                img: [["login.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "login.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -224,7 +256,12 @@ function Projects() {
                                     "Creators of parties are able to remove members from their parties and edit and delete the party.",
                                     "Users can join and leave other people's parties.",
                                 ],
-                                img: [["parties.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "parties.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -232,7 +269,12 @@ function Projects() {
                                 subtitle: [
                                     "Page dynamically changes depending on whether the user wants to create or edit a party.",
                                 ],
-                                img: [["create-party.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "create-party.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                         ]}
@@ -271,7 +313,12 @@ function Projects() {
                                 subtitle: [
                                     "Surprisingly, the login worked even though this code is over a year old at the time of writing this.",
                                 ],
-                                img: [["netflix-sign-in.png", "90%"]],
+                                img: [
+                                    {
+                                        imagePath: "netflix-sign-in.png",
+                                        width: "90%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -279,7 +326,12 @@ function Projects() {
                                 subtitle: [
                                     "Maybe I should use a VPN and get a Thai Netflix account",
                                 ],
-                                img: [["netflix-pricing.png", "90%"]],
+                                img: [
+                                    {
+                                        imagePath: "netflix-pricing.png",
+                                        width: "90%",
+                                    },
+                                ],
                                 video: [],
                             },
                         ]}
@@ -310,7 +362,12 @@ function Projects() {
                                     "I spent way too much time trying to make the UI look decent.",
                                     "You just need to put in the link and file path to search for the file to download, then choose the video resolution to download.",
                                 ],
-                                img: [["youtube-downloader.png", "90%"]],
+                                img: [
+                                    {
+                                        imagePath: "youtube-downloader.png",
+                                        width: "90%",
+                                    },
+                                ],
                                 video: [],
                             },
                         ]}
@@ -380,7 +437,12 @@ function Projects() {
                                 subtitle: [
                                     "Cross the road without getting hit by the cars, the cars move faster as you clear more levels.",
                                 ],
-                                img: [["turtle-crossing.png", "80%"]],
+                                img: [
+                                    {
+                                        imagePath: "turtle-crossing.png",
+                                        width: "80%",
+                                    },
+                                ],
                                 video: [],
                             },
                         ]}

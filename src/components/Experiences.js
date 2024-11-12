@@ -160,7 +160,12 @@ function Experiences() {
                                 subtitle: [
                                     "This was the first project I worked on at Leasi. A mobile view was needed for contractors to view their machines easily on the go.",
                                 ],
-                                img: [["leasi-mobile-view.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "leasi-mobile-view.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -169,7 +174,12 @@ function Experiences() {
                                     "A problem for Leasi's customers was that they needed to routinely fetch data from our APIs to get notified of updates.",
                                     "The webhooks system that I implemented allowed any events to be tracked and sent to the customer's server immediately.",
                                 ],
-                                img: [["leasi-webhooks.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "leasi-webhooks.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -178,7 +188,12 @@ function Experiences() {
                                     "I was tasked with migrating the database from Appfarm's database system to MongoDB.",
                                     "This was an initial integration test to ensure that MongoDB was compatiable with Appfarm.",
                                 ],
-                                img: [["leasi-migration.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "leasi-migration.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -230,7 +245,12 @@ function Experiences() {
                                     "The WebRTC connection allows the user to see the robot's camera feed and send commands to the robot.",
                                     "In the case of the demo, the camera is simulated by a webcam feed, but can be easily replaced with the robot's camera feed.",
                                 ],
-                                img: [["ssi-diagram.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "ssi-diagram.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -239,7 +259,12 @@ function Experiences() {
                                     "The UI for the RobiButler project was developed using MRTK3 components and tested with the Meta Quest 3 headset.",
                                     "The interface allows users to interact with the robot using hand gestures and voice commands.",
                                 ],
-                                img: [["ssi-ui.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "ssi-ui.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -293,7 +318,13 @@ function Experiences() {
                                     "I worked on integrating medical imaging APIs like Bioformats and OpenSlide, to allow the platform to read and display various image formats.",
                                     "These image formats include DICOM, SVS, and other common medical imaging formats.",
                                 ],
-                                img: [["qritive-openslide-images.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath:
+                                            "qritive-openslide-images.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -302,7 +333,12 @@ function Experiences() {
                                     "I conducted benchmarking tests to compare the performance of Bioformats and OpenSlide in reading large medical images.",
                                     "The tests measured the time taken to load and display images of different sizes.",
                                 ],
-                                img: [["qritive-timings.png", "100%"]],
+                                img: [
+                                    {
+                                        imagePath: "qritive-timings.png",
+                                        width: "100%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -312,8 +348,14 @@ function Experiences() {
                                     "These charts are used to help pathologists visualize and analyze data more effectively.",
                                 ],
                                 img: [
-                                    ["qritive-bar-chart.png", "100%"],
-                                    ["qritive-pie-chart.png", "100%"],
+                                    {
+                                        imagePath: "qritive-bar-chart.png",
+                                        width: "100%",
+                                    },
+                                    {
+                                        imagePath: "qritive-pie-chart.png",
+                                        width: "100%",
+                                    },
                                 ],
                                 video: [],
                             },
@@ -354,7 +396,12 @@ function Experiences() {
                                     "I created an Azure function that would handle the chatbot's responses to user queries.",
                                     "The Azure function I created will format the data received by the chatbot function and display the appropriate type of message. In this case, the message sent is a simple text message.",
                                 ],
-                                img: [["aira-chatting.png", "90%"]],
+                                img: [
+                                    {
+                                        imagePath: "aira-chatting.png",
+                                        width: "90%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -362,7 +409,12 @@ function Experiences() {
                                 subtitle: [
                                     "When you ask Aira for a list of jobs, the chatbot will display a carousel of job cards.",
                                 ],
-                                img: [["aira-job-search.png", "90%"]],
+                                img: [
+                                    {
+                                        imagePath: "aira-job-search.png",
+                                        width: "90%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -370,7 +422,12 @@ function Experiences() {
                                 subtitle: [
                                     "I made use of the LINE LIFF app and LINE rich menu to allow the user to upload their resume and get feedback from Aira on how they can craft a more effective resume.",
                                 ],
-                                img: [["aira-rich-menu.jpg", "70%"]],
+                                img: [
+                                    {
+                                        imagePath: "aira-rich-menu.jpg",
+                                        width: "70%",
+                                    },
+                                ],
                                 video: [],
                             },
                             {
@@ -380,8 +437,14 @@ function Experiences() {
                                     "You can't see the animations, but I added some into the website to make it look nicer because I like animations :)",
                                 ],
                                 img: [
-                                    ["aira-job-details.png", "80%"],
-                                    ["aira-resume-feedback.png", "80%"],
+                                    {
+                                        imagePath: "aira-job-details.png",
+                                        width: "80%",
+                                    },
+                                    {
+                                        imagePath: "aira-resume-feedback.png",
+                                        width: "80%",
+                                    },
                                 ],
                                 video: [],
                             },
