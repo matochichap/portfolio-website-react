@@ -1068,7 +1068,8 @@ a.experience-button {
     right: 0;
     display: flex;
     justify-content: space-between;
-    padding: calc(2.5px + 1.5vh) 4%;
+    padding: 3%;
+    /* padding: calc(2.5px + 1.5vh) 4%; */
     background-color: var(--color-modal-card);
     z-index: 1;
 }
@@ -1177,6 +1178,12 @@ a.experience-button {
 .modal-features-media {
     margin: 10px 0;
     border-radius: 10px;
+}
+
+@media(max-width: 768px) {
+    .modal-nav {
+        padding: 4%;
+    }
 }
 
 /* IDE */
