@@ -635,7 +635,7 @@ hr {
         right: 0;
         height: 25px;
         opacity: 1;
-        background: linear-gradient(to bottom, transparent, var(--color-card));
+        background-image: linear-gradient(to bottom, transparent, var(--color-card));
         transition: opacity 1s ease;
     }
 

@@ -169,6 +169,23 @@ function Experiences() {
                                 video: [],
                             },
                             {
+                                title: "Automated advanced search with Selenium",
+                                subtitle: [
+                                    "Appfarm had a lot of repetitive tasks that needed to be done manually, which was time-consuming.",
+                                    "One of these tasks was calling the webhook function after every change in the database.",
+                                    "I automated this process using Selenium to save time and reduce human error.",
+                                ],
+                                img: [],
+                                video: [
+                                    {
+                                        videoId:
+                                            "13ytacK_RA-w8hOikFaOlfbOGbmnFnc7T",
+                                        width: "100%",
+                                        aspectRatio: "1.87",
+                                    },
+                                ],
+                            },
+                            {
                                 title: "Webhooks for real-time updates",
                                 subtitle: [
                                     "A problem for Leasi's customers was that they needed to routinely fetch data from our APIs to get notified of updates.",
@@ -194,16 +211,6 @@ function Experiences() {
                                         width: "100%",
                                     },
                                 ],
-                                video: [],
-                            },
-                            {
-                                title: "Automated coding with Selenium",
-                                subtitle: [
-                                    "Appfarm had a lot of repetitive tasks that needed to be done manually, which was time-consuming.",
-                                    "One of these tasks was calling the webhook function after every change in the database.",
-                                    "I automated this process using Selenium to save time and reduce human error.",
-                                ],
-                                img: [],
                                 video: [],
                             },
                         ]}
