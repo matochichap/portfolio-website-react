@@ -80,6 +80,7 @@ hr {
 
     --color-card: rgb(40, 40, 40);
     --color-card-fg: rgb(61, 61, 61);
+    --colour-card-fg-secondary: rgb(86, 86, 86);
 
     --color-project-skill-tag-outline: rgb(35, 35, 35);
     --color-button-hover: rgb(61, 61, 61);
@@ -112,6 +113,8 @@ hr {
 
     --color-card: rgb(211, 211, 211);
     --color-card-fg: rgb(159, 159, 159);
+    --colour-card-fg-secondary: rgb(150, 150, 150);
+
 
     --color-project-skill-tag-outline: rgb(178, 178, 178);
     --color-button-hover: rgb(187, 186, 186);
@@ -1065,7 +1068,7 @@ a.experience-button {
     right: 0;
     display: flex;
     justify-content: space-between;
-    padding: calc(2.5px + 1.5vh) 3.5%;
+    padding: calc(2.5px + 1.5vh) 4%;
     background-color: var(--color-modal-card);
     z-index: 1;
 }
@@ -1077,13 +1080,27 @@ a.experience-button {
     align-items: center;
 }
 
-.modal-close-btn {
-    font-size: 30px;
-    cursor: pointer;
-    transition: scale 0.5s ease;
+.modal-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    height: 40px;
+}
 
+.modal-button {
+    font-size: 20px;
+    cursor: pointer;
+    border: 2px solid var(--colour-card-fg-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 100%;
+    aspect-ratio: 1;
+    transition: background-color 0.5s ease;
+    
     &:hover {
-        scale: 120%;
+        background-color: var(--colour-card-fg-secondary);
     }
 }
 

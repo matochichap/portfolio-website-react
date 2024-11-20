@@ -71,7 +71,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                     <div className="project-card-back-inner">
                         <p className="project-subtitle">{project.subtitle}</p>
                         <div className="project-buttons">
-                            <a
+                            {/* <a
                                 className="project-link"
                                 href={`${project.link}`}
                             >
@@ -79,7 +79,7 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                                     className="fa-solid fa-link fa-icon"
                                     style={{ scale: "90%" }}
                                 ></i>
-                            </a>
+                            </a> */}
                             <div
                                 className="project-modal"
                                 onClick={() =>
@@ -109,9 +109,9 @@ function Projects() {
             subtitle:
                 "A full stack web app that optimally matches ads to moderators, enhancing efficiency with violation flagging and text categorisation.",
             img: "tiktok-icon.png",
-            link: "https://devpost.com/software/igmoid-masterchefs",
             modalContent: {
                 title: "TikTok Ad Moderation",
+                link: "https://devpost.com/software/igmoid-masterchefs",
                 content: (
                     <ModalContent
                         directory="tiktok-ad-moderation"
@@ -161,9 +161,9 @@ function Projects() {
             subtitle:
                 "A full stack web app to automate combining different orders to the same shipments using machine learning.",
             img: "portflow-icon.png",
-            link: "https://matochichap.github.io/PSA_CodeSprint/",
             modalContent: {
                 title: "PortFlow",
+                link: "https://matochichap.github.io/PSA_CodeSprint/",
                 content: (
                     <ModalContent
                         directory="portflow"
@@ -225,9 +225,9 @@ function Projects() {
             subtitle:
                 "A website built with Flask and MySQL with authentication and CRUD functionality to allow users to create and join parties.",
             img: "party-icon.png",
-            link: "https://github.com/matochichap/party-website",
             modalContent: {
                 title: "Party Website",
+                link: "https://github.com/matochichap/party-website",
                 content: (
                     <ModalContent
                         directory="party-website"
@@ -287,9 +287,9 @@ function Projects() {
             subtitle:
                 "A bot built with Selenium to helps you automate adding all your watch history into another profile.",
             img: "netflix-icon.png",
-            link: "https://github.com/matochichap/transfer-netflix-profile",
             modalContent: {
                 title: "Transfer Netflix profile",
+                link: "https://github.com/matochichap/transfer-netflix-profile",
                 content: (
                     <ModalContent
                         directory="transfer-netflix-profile"
@@ -344,9 +344,9 @@ function Projects() {
             subtitle:
                 "A simple Python app that helps you download videos from YouTube built with Tkinter.",
             img: "youtube-icon.png",
-            link: "https://github.com/matochichap/youtube-downloader",
             modalContent: {
                 title: "YouTube Downloader",
+                link: "https://github.com/matochichap/youtube-downloader",
                 content: (
                     <ModalContent
                         directory="youtube-downloader"
@@ -420,9 +420,9 @@ function Projects() {
             subtitle:
                 "Crossy Road but with turtles built with Python and Turtle graphics that gets harder as you clear more levels.",
             img: "turtle-crossing-icon.png",
-            link: "https://github.com/matochichap/turtle-crossing",
             modalContent: {
                 title: "Turtle Crossing",
+                link: "https://github.com/matochichap/turtle-crossing",
                 content: (
                     <ModalContent
                         directory="turtle-crossing"

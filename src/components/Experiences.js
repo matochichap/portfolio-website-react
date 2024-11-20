@@ -114,12 +114,12 @@ function ExperienceCard({ experience, modalOpen, open, close, index }) {
                     >
                         <i className="fa-regular fa-lightbulb fa-icon-highlight"></i>
                     </div>
-                    <a
+                    {/* <a
                         className="experience-button"
                         href={`${experience.link}`}
                     >
                         <i className="fa-solid fa-link fa-icon"></i>
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </>
@@ -136,7 +136,6 @@ function Experiences() {
                 "Leasi's SaaS platform offers a centralized system for fleet control, allowing contractors and rental companies to gain visibility, streamline operations, and improve sustainability by better utilizing both owned and rented equipment.",
             ],
             img: "./resources/images/experience-images/leasi-thumbnail.png",
-            link: "https://www.leasi.io/en",
             skills: [
                 "Appfarm",
                 "GraphQL",
@@ -149,6 +148,7 @@ function Experiences() {
             ],
             modalContent: {
                 title: "Leasi",
+                link: "https://www.leasi.io/en",
                 content: (
                     <ModalContent
                         directory="leasi"
@@ -227,7 +227,6 @@ function Experiences() {
                 "Leveraging advanced communication interfaces and large language models (LLMs), RobiButler interprets these inputs to perform various household tasks, such as monitoring the robot's status, executing instructions, and selecting target objects via hand pointing.",
             ],
             img: "./resources/images/experience-images/ssi-thumbnail.png",
-            link: "https://ssi.nus.edu.sg/",
             skills: [
                 "Python",
                 "C#",
@@ -239,6 +238,7 @@ function Experiences() {
             ],
             modalContent: {
                 title: "Smart Systems Institute",
+                link: "https://ssi.nus.edu.sg/",
                 content: (
                     <ModalContent
                         directory="ssi"
@@ -301,7 +301,6 @@ function Experiences() {
                 "Qritive's technology aims to streamline pathology workflows and improve patient outcomes through advanced image analysis and data integration.",
             ],
             img: "./resources/images/experience-images/qritive-thumbnail.png",
-            link: "https://qritive.com/",
             skills: [
                 "Python",
                 "Java",
@@ -312,6 +311,7 @@ function Experiences() {
             ],
             modalContent: {
                 title: "Qritive",
+                link: "https://qritive.com/",
                 content: (
                     <ModalContent
                         directory="qritive"
@@ -379,7 +379,6 @@ function Experiences() {
                 "Whatnot partnered with another startup, Blockchain Labs, to collaborate on a project called Aira, a LINE AI job matching chatbot to help job seekers find jobs more easily.",
             ],
             img: "./resources/images/experience-images/whatnot-thumbnail.png",
-            link: "https://www.helloaira.io/",
             skills: [
                 "Python",
                 "Javascript",
@@ -391,6 +390,7 @@ function Experiences() {
             ],
             modalContent: {
                 title: "Whatnot Startup Studio",
+                link: "https://www.helloaira.io/",
                 content: (
                     <ModalContent
                         directory="aira-chatbot"
