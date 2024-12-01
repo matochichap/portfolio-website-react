@@ -140,6 +140,9 @@ hr {
 
 .navbar {
     --main-nav-width: 75vw;
+    --main-nav-border: 2px;
+    --main-nav-padding-x: 20px;
+    --main-nav-offset: calc(var(--main-nav-border) + var(--main-nav-padding-x));
 }
 
 .main-nav {
@@ -147,15 +150,15 @@ hr {
     width: var(--main-nav-width);
     position: fixed;
     top: 3vh;
-    left: calc((100vw - var(--main-nav-width)) / 2 - 20px);
+    left: calc((100vw - var(--main-nav-width)) / 2 - var(--main-nav-offset));
     right: 0;
     z-index: 2;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px var(--main-nav-padding-x);
     background-color: var(--color-card);
     border-radius: 20px;
-    border: solid 2px var(--color-card-fg);
+    border: solid var(--main-nav-border) var(--color-card-fg);
     transition: background-color 1s ease, border 1s ease;
 }
 
