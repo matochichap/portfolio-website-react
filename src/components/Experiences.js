@@ -1,6 +1,7 @@
 import "./Components.css"
 import Modal from "./Modal"
 import ModalContent from "./ModalContent"
+import Lightbulb from "./Lightbulb"
 import { React, useState, useEffect, useRef } from "react"
 import { AnimatePresence } from "framer-motion"
 import { skillImages } from "../utils/constants"
@@ -73,6 +74,12 @@ function ExperienceSkills({ skills }) {
 
 function ExperienceCard({ experience, modalOpen, open, close, index }) {
     const experienceCardRef = useRef(null)
+    const experienceDescriptionRef = useRef(null)
+    const handleDescriptionClick = () => {
+        experienceDescriptionRef.current.classList.toggle(
+            "experience-descriptions-clicked"
+        )
+    }
 
     useEffect(() => {
         const observer = new IntersectionObserver((entries) => {
@@ -98,7 +105,11 @@ function ExperienceCard({ experience, modalOpen, open, close, index }) {
                 <h2 className="experience-title">{experience.title}</h2>
                 <h3 className="experience-company">{experience.companyName}</h3>
                 <ExperienceSkills skills={experience.skills}></ExperienceSkills>
-                <div className="experience-descriptions">
+                <div
+                    ref={experienceDescriptionRef}
+                    className="experience-descriptions"
+                    onClick={handleDescriptionClick}
+                >
                     {experience.descriptions.map((description, index) => {
                         return (
                             <p className="experience-description" key={index}>
@@ -108,12 +119,18 @@ function ExperienceCard({ experience, modalOpen, open, close, index }) {
                     })}
                 </div>
                 <div className="experience-buttons">
-                    <div
+                    <Lightbulb
+                        index={index}
+                        open={open}
+                        close={close}
+                        modalOpen={modalOpen}
+                    />
+                    {/* <div
                         className="experience-button"
                         onClick={() => (modalOpen ? close() : open(index))}
                     >
                         <i className="fa-regular fa-lightbulb fa-icon-highlight"></i>
-                    </div>
+                    </div> */}
                     {/* <a
                         className="experience-button"
                         href={`${experience.link}`}

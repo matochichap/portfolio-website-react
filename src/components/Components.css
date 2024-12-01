@@ -631,6 +631,7 @@ hr {
     gap: 8px;
     position: relative;
     max-height: calc(var(--font-size) * 3.7);
+    cursor: pointer;
     transition: max-height 1s ease;
 
     &::after {
@@ -644,13 +645,12 @@ hr {
         background-image: linear-gradient(to bottom, transparent, var(--color-card));
         transition: opacity 1s ease;
     }
+}
 
-    &:hover {
-        max-height: 100vh;
-
-        &::after {
-            opacity: 0;
-        }
+.experience-descriptions.experience-descriptions-clicked {
+    max-height: 100vh;
+    &::after {
+        opacity: 0;
     }
 }
 
@@ -672,7 +672,7 @@ hr {
     aspect-ratio: 1/1;
     border: solid 2px var(--color-button-hover);
     border-radius: 7px;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -1101,6 +1101,7 @@ a.experience-button {
     border-radius: 10px;
     height: 100%;
     aspect-ratio: 1;
+    text-decoration: none;
     transition: background-color 0.5s ease;
     
     &:hover {
@@ -1292,4 +1293,39 @@ a.experience-button {
     .ide-expand-icon-box {
         display: block;
     }
+}
+
+/* Lightbulb */
+.lightbulb-button {
+    --lightbulb-button-height: 0px; /* Set in Lightbulb.js */
+    --lightbulb-width: 0px; /* Set in Lightbulb.js */
+    --spacing: calc((var(--lightbulb-button-height) - var(--lightbulb-width)) / 2);
+    height: 100%;
+    max-width: calc(var(--lightbulb-button-height) - var(--spacing) * 2);
+    overflow: hidden;
+    flex-shrink: 0;
+    border: solid 2px var(--color-button-hover);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+    transition: background-color 0.5s ease, border 1s ease, max-width 2s ease;
+    padding: 0 var(--spacing);
+    gap: calc(var(--spacing) + 2px);
+
+    &:hover {
+        background-color: var(--color-button-hover);
+        max-width: 1000px;
+    }
+}
+
+.lightbulb {
+    font-size: calc(7px + 1vw);
+}
+
+.lightbulb-text {
+    font-size: calc(7px + 0.5vw);
+    font-weight: 400;
+    text-wrap: nowrap;
 }
