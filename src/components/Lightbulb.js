@@ -16,18 +16,21 @@ function Lightbulb({ index, open, close, modalOpen }) {
                 "--lightbulb-width",
                 `${lightbulbWidth}px`
             )
-            console.log(lightbulbButtonHeight, lightbulbWidth)
         }
 
-        // Initial dimensions update
-        updateDimensions()
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (let entry of entries) {
+                updateDimensions(entry)
+            }
+        })
 
-        // Add event listener for window resize
-        window.addEventListener("resize", updateDimensions)
+        const currentLightbulbRef = lightbulbRef.current
 
-        // Cleanup event listener on unmount
+        resizeObserver.observe(currentLightbulbRef)
+
         return () => {
-            window.removeEventListener("resize", updateDimensions)
+            resizeObserver.unobserve(currentLightbulbRef)
+            resizeObserver.disconnect()
         }
     }, [])
 
