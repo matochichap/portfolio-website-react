@@ -49,11 +49,13 @@ function Modal({ handleClose, modalContent }) {
                 <div className="modal-nav">
                     <h2 className="modal-title">{title}</h2>
                     <div className="modal-buttons">
-                        <a href={link} className="modal-button">
-                            <i
-                                className="fa-solid fa-link fa-icon"
-                                onClick={handleClose}
-                            ></i>
+                        <a
+                            href={link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="modal-button"
+                        >
+                            <i className="fa-solid fa-link fa-icon"></i>
                         </a>
                         <div className="modal-button" onClick={handleClose}>
                             <i className="fa-solid fa-xmark fa-icon"></i>
