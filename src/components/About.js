@@ -1,46 +1,61 @@
-import './Components.css'
-import { React, useEffect, useRef } from 'react'
+import "./Components.css"
+import { React, useEffect, useRef } from "react"
 
 function About() {
-    const componentRef = useRef(null)
+    const aboutImgRef = useRef(null)
+    const aboutCardRef = useRef(null)
     const [t1, t2, t3, t4] = [
-        "I'm Rui Jia, an undergraduate at the National University of Singapore pursuing a double major in Computer Science and Statistics. ",
-        "I love finding new and creative ways to create better user experiences and solving complex problems through code. ",
-        "I am interested in exploring software development and AI to find ways to automate processes to create meaningful tools. ",
-        "With a combination of technical expertise and a creative mindset, I hope to create meaningful digital experiences that leave a lasting impact."
+        "I'm Rui Jia, a CS undergraduate at the National University of Singapore.",
+        "I love finding new and creative ways to create better user experiences and solving interesting problems through code. ",
+        "With a combination of technical expertise and a creative mindset, I hope to create meaningful digital experiences that leave a lasting impact.",
+        "I am interested in exploring software development and AI to find ways to create meaningful tools. ",
     ]
     useEffect(() => {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("slide-in-active")
+                    aboutImgRef.current.classList.add("slide-in-active")
+                    setTimeout(() => {
+                        aboutCardRef.current.classList.add("slide-in-active")
+                    }, 500)
                 }
             })
         })
 
-        observer.observe(componentRef.current)
+        const currentAboutImgRef = aboutImgRef.current
+        const currentAboutCardRef = aboutCardRef.current
+
+        observer.observe(currentAboutImgRef)
+        observer.observe(currentAboutCardRef)
 
         return () => {
+            observer.unobserve(currentAboutImgRef)
+            observer.unobserve(currentAboutCardRef)
             observer.disconnect()
         }
     }, [])
 
     return (
         <>
-        <section className='about'>
-            <div className='section-header'>
-                <h1 className='section-title'>About</h1>
-                <hr />
-            </div>
-            <div className='about-cards slide-in' ref={componentRef}>
-                <div className='about-card'>
-                    <h2>{t1 + t2}</h2>
+            <section className="about">
+                <div className="section-header">
+                    <h1 className="section-title">About</h1>
+                    <hr />
                 </div>
-                <div className='about-card'>
-                    <h2>{t3 + t4}</h2>
+                <div className="about-section">
+                    <img
+                        ref={aboutImgRef}
+                        className="about-img"
+                        src="./resources/images/about.jpg"
+                        alt="about"
+                    />
+                    <div ref={aboutCardRef} className="about-card">
+                        <h2>{t1}</h2>
+                        <h2>{t2}</h2>
+                        <h2>{t3}</h2>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
         </>
     )
 }

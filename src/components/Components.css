@@ -456,29 +456,58 @@ hr {
     padding: 0 10%;
 }
 
-.about-cards {
-    padding: 0;
+.about-section {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin: calc(20px + 2vw) 0;
+    justify-content: space-between;
+    gap: 30px;
+    height: 30vw;
+    padding: 0 3%;
 }
 
 .about-card {
-    width: 80%;
+    flex: 1;
+    box-sizing: border-box;
     background-color: var(--color-card);
     border-radius: 10px;
-    padding: 5px clamp(3%, 20px, 5%);
-    margin: 20px 3vw;
-    transition: background-color 1s ease;
+    padding: 0 2%;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: background-color 1s ease, opacity 1s ease, transform 1s ease, filter 1s ease;
 }
 
 .about-card h2 {
-    /* text-align: justify; */
     font-weight: 400;
     font-size: calc(10px + 0.7vw);
     line-height: calc(10px + 2vw);
+    text-align: justify;
+}
+
+.about-img {
+    flex: 1;
+    height: 100%;
+    max-width: calc(50% - 15px);
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease, filter 1s ease;
+}
+
+@media (max-width: 1190px) {    
+    .about-section {
+        flex-direction: column;
+        height: auto;
+    }
+    .about-card {
+        padding: 0 4%;
+    }
+    .about-img {
+        max-width: none;
+        width: min(550px, 100%);
+    }
 }
 
 /* Skills */
