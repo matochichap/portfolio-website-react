@@ -15,8 +15,10 @@ function About() {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     aboutImgRef.current.classList.add("slide-in-active")
+                    observer.unobserve(aboutImgRef.current)
                     setTimeout(() => {
                         aboutCardRef.current.classList.add("slide-in-active")
+                        observer.unobserve(aboutCardRef.current)
                     }, 500)
                 }
             })
@@ -29,8 +31,6 @@ function About() {
         observer.observe(currentAboutCardRef)
 
         return () => {
-            observer.unobserve(currentAboutImgRef)
-            observer.unobserve(currentAboutCardRef)
             observer.disconnect()
         }
     }, [])

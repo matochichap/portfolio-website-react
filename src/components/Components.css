@@ -473,7 +473,7 @@ hr {
     padding: 0 2%;
     opacity: 0;
     filter: blur(5px);
-    transform: translateX(100%);
+    transform: translateX(100px);
     transition: background-color 1s ease, opacity 1s ease, transform 1s ease, filter 1s ease;
 }
 
