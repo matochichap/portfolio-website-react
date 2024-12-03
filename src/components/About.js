@@ -4,7 +4,7 @@ import { React, useEffect, useRef } from "react"
 function About() {
     const aboutImgRef = useRef(null)
     const aboutCardRef = useRef(null)
-    const [t1, t2, t3, t4] = [
+    const [t1, t2, t3] = [
         "I'm Rui Jia, a CS undergraduate at the National University of Singapore.",
         "I love finding new and creative ways to create better user experiences and solving interesting problems through code. ",
         "With a combination of technical expertise and a creative mindset, I hope to create meaningful digital experiences that leave a lasting impact.",
