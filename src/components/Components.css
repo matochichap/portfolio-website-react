@@ -318,7 +318,7 @@ hr {
 
 /* Buffer */
 .buffer {
-    height: 50px;
+    height: 84px;
 }
 
 /* Intro */
@@ -1043,7 +1043,7 @@ a.experience-button {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 100px 10%;
+    padding: 4% 10%;
 }
 
 .contact-link-box {
@@ -1083,10 +1083,11 @@ a.experience-button {
 
 @media (max-width: 768px) {
     .contact-links {
-        padding: 70px calc(30px + 4vw);
+        padding: 4% calc(30px + 4vw);
     }
 
     .contact-link-box {
+        --contact-link-box-height: calc(30px + 2.5vw);
         scale: 90%;
     }
 

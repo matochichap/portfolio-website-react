@@ -43,7 +43,7 @@ function Intro() {
                         <div className="intro-content-text" ref={textRef}>
                             <h1 className="intro-title">Rui Jia</h1>
                             <h2 className="intro-subtitle">
-                                Computer Science undergratuate
+                                Computer Science undergraduate
                             </h2>
                         </div>
                         <div className="intro-wrapper intro-link" ref={btnRef}>
