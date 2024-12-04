@@ -1370,8 +1370,11 @@ a.experience-button {
 
     &:hover {
         background-color: var(--color-button-hover);
-        max-width: 1000px;
     }
+}
+
+.lightbulb-button-expand {
+    max-width: 1000px;
 }
 
 .lightbulb {

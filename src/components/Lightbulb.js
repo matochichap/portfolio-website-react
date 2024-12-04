@@ -18,17 +18,32 @@ function Lightbulb({ index, open, close, modalOpen }) {
             )
         }
 
+        const intersectionObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add("lightbulb-button-expand")
+                    }, 500)
+                }
+            })
+        })
+
         const resizeObserver = new ResizeObserver((entries) => {
             for (let entry of entries) {
                 updateDimensions(entry)
             }
         })
 
+        const currentLightbulbButtonRef = lightbulbButtonRef.current
         const currentLightbulbRef = lightbulbRef.current
 
+        intersectionObserver.observe(currentLightbulbButtonRef)
         resizeObserver.observe(currentLightbulbRef)
 
         return () => {
+            intersectionObserver.unobserve(currentLightbulbButtonRef)
+            intersectionObserver.disconnect()
+
             resizeObserver.unobserve(currentLightbulbRef)
             resizeObserver.disconnect()
         }
