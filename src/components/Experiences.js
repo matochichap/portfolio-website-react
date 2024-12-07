@@ -175,7 +175,8 @@ function Experiences() {
                             {
                                 title: "Mobile View for machines",
                                 subtitle: [
-                                    "This was the first project I worked on at Leasi. A mobile view was needed for contractors to view their machines easily on the go.",
+                                    "This was the first task I worked on at Leasi. A mobile view was needed for contractors to view their machines easily on the go.",
+                                    " I worked on the frontend components to fetch and display the machine data.",
                                 ],
                                 img: [
                                     {
@@ -188,9 +189,9 @@ function Experiences() {
                             {
                                 title: "Automated advanced search with Selenium",
                                 subtitle: [
-                                    "Appfarm had a lot of repetitive tasks that needed to be done manually, which was time-consuming.",
-                                    "One of these tasks was calling the webhook function after every change in the database.",
-                                    "I automated this process using Selenium to save time and reduce human error.",
+                                    "There were a lot of repetitive tasks that needed to be done manually, which was time-consuming.",
+                                    "One of these tasks was calling a webhook function after every change in the database.",
+                                    "I automated this process using Selenium to look for changes in the database saving time and reducing human error.",
                                 ],
                                 img: [],
                                 video: [
@@ -205,7 +206,7 @@ function Experiences() {
                             {
                                 title: "Webhooks for real-time updates",
                                 subtitle: [
-                                    "A problem for Leasi's customers was that they needed to routinely fetch data from our APIs to get notified of updates.",
+                                    "Leasi's customers needed to routinely fetch data from our APIs to get notified of updates, which was inefficient.",
                                     "The webhooks system that I implemented allowed any events to be tracked and sent to the customer's server immediately.",
                                 ],
                                 img: [
@@ -221,6 +222,7 @@ function Experiences() {
                                 subtitle: [
                                     "I was tasked with migrating the database from Appfarm's database system to MongoDB.",
                                     "This was an initial integration test to ensure that MongoDB was compatiable with Appfarm.",
+                                    "I also created a backend server with Express and Mongoose for the Appfarm frontend to interact with the MongoDB database.",
                                 ],
                                 img: [
                                     {
@@ -267,7 +269,7 @@ function Experiences() {
                                 subtitle: [
                                     "The diagram below shows a simplified flow of the WebRTC communication flow between the RobiButler and the user.",
                                     "The WebRTC connection allows the user to see the robot's camera feed and send commands to the robot.",
-                                    "In the case of the demo, the camera is simulated by a webcam feed, but can be easily replaced with the robot's camera feed.",
+                                    "In the case of the demo video at the bottom of the page, the camera is simulated by a webcam feed, but can be easily replaced with the robot's camera feed.",
                                 ],
                                 img: [
                                     {
@@ -280,7 +282,7 @@ function Experiences() {
                             {
                                 title: "Meta Quest 3 Interface",
                                 subtitle: [
-                                    "The UI for the RobiButler project was developed using MRTK3 components and tested with the Meta Quest 3 headset.",
+                                    "I developed the RobiButler UI using MRTK3 components and tested it with the Meta Quest 3 headset.",
                                     "The interface allows users to interact with the robot using hand gestures and voice commands.",
                                 ],
                                 img: [
@@ -293,7 +295,9 @@ function Experiences() {
                             },
                             {
                                 title: "Demo",
-                                subtitle: [],
+                                subtitle: [
+                                    "The demo shows the real time video stream and text communication between the VR headset and the Python server via the WebRTC connection.",
+                                ],
                                 img: [],
                                 video: [
                                     {

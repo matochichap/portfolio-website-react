@@ -233,8 +233,8 @@ function Projects() {
                         directory="party-website"
                         skills={["Flask", "SQLAlchemy", "HTML", "CSS"]}
                         comments={[
-                            "This was actually an assignment for an internship application which I was able to complete within 3 days even though I was given 7 days to complete it.",
-                            "I was really happy with how it turned out since I was able to implement user authentication, CRUD functionality and also make the UI look pretty good in just 3 days.",
+                            "This was actually an assignment for an internship application.",
+                            "I was really happy with how it turned out since I was able to implement user authentication, CRUD functionality and also make the UI look pretty good given a tight deadline.",
                         ]}
                         features={[
                             {

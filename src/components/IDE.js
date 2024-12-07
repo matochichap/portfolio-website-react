@@ -77,7 +77,7 @@ function IDE() {
                 [
                     [`${tab}${tab}print`, "purple"],
                     ["(", "default"],
-                    ['"Hi, I\'m Rui Jia"', "blue"],
+                    ['"Hi, I\'m Rui Jia."', "blue"],
                     [")", "default"],
                 ],
                 [["", "default"]],
@@ -157,8 +157,6 @@ function IDE() {
                     [`"CSS"`, "blue"],
                     [", ", "default"],
                     [`"React"`, "blue"],
-                    [", ", "default"],
-                    [`"MUI"`, "blue"],
                 ],
                 [
                     [`${tab}${tab}${tab}]`, "default"],
