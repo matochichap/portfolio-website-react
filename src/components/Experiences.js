@@ -9,9 +9,19 @@ import { skillImages } from "../utils/constants"
 function ExperienceSkills({ skills }) {
     const skillTagsRef = useRef(null)
     const [scrollDirection, setScrollDirection] = useState(null)
+    const [isTouchDevice, setIsTouchDevice] = useState(false)
+
+    const detectTouchDevice = () => {
+        return "ontouchstart" in window || navigator.maxTouchPoints > 0
+    }
+
+    useEffect(() => {
+        setIsTouchDevice(detectTouchDevice())
+    }, [])
 
     // Scroll function to move left or right based on scroll direction
     useEffect(() => {
+        if (isTouchDevice) return
         const container = skillTagsRef.current
         if (!scrollDirection || !container) return
 
@@ -26,7 +36,7 @@ function ExperienceSkills({ skills }) {
 
         // Clear interval when scroll direction changes or component unmounts
         return () => clearInterval(scrollInterval)
-    }, [scrollDirection])
+    }, [scrollDirection, isTouchDevice])
 
     // Handle mouse movement within the skill tags container
     const handleMouseMove = (event) => {
@@ -50,25 +60,27 @@ function ExperienceSkills({ skills }) {
     }
 
     return (
-        <div
-            className="experience-skill-tags"
-            ref={skillTagsRef}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-        >
-            {skills.map((skill, index) => {
-                return (
-                    <div key={index} className="experience-logo">
-                        <img
-                            className="experience-skill-logo"
-                            src={`./resources/images/skill-logos/${skillImages[skill]}`}
-                            alt="skill-logo"
-                        />
-                        <p className="experience-skill">{skill}</p>
-                    </div>
-                )
-            })}
-        </div>
+        <>
+            <div
+                className="experience-skill-tags"
+                ref={skillTagsRef}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+            >
+                {skills.map((skill, index) => {
+                    return (
+                        <div key={index} className="experience-logo">
+                            <img
+                                className="experience-skill-logo"
+                                src={`./resources/images/skill-logos/${skillImages[skill]}`}
+                                alt="skill-logo"
+                            />
+                            <p className="experience-skill">{skill}</p>
+                        </div>
+                    )
+                })}
+            </div>
+        </>
     )
 }
 
