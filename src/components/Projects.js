@@ -221,6 +221,75 @@ function Projects() {
             },
         },
         {
+            title: "FakeBank",
+            subtitle: "A frontend web app to simulate bank transactions built with NextJS, TailwindCSS, Typescript and Redux.",
+            img: "fake-bank-icon.png",
+            modalContent: {
+                title: "FakeBank",
+                link: "https://frontend-bank-list.vercel.app/bank",
+                content: (
+                    <ModalContent
+                        directory="fake-bank"
+                        skills={["NextJS", "TailwindCSS", "Typescript", "Redux"]}
+                        comments={[
+                            "In this project, I learnt more on Redux and state management and figuring out how to optimise performance.",
+                        ]}
+                        features={[
+                            {
+                                title: "Bank Filters",
+                                subtitle: [
+                                    "Allows you to filter the banks by a date range or by description",
+                                ],
+                                img: [
+                                    {
+                                        imagePath: "bank-filters.png",
+                                        width: "100%",
+                                    },
+                                ],
+                                video: [],
+                            },
+                            {
+                                title: "Bank Table",
+                                subtitle: [
+                                    "Displays the bank details in a table format and allows you to sort the table by the date.",
+                                ],
+                                img: [
+                                    {
+                                        imagePath: "bank-table.png",
+                                        width: "100%",
+                                    },
+                                ],
+                                video: [],
+                            },
+                            {
+                                title: "Bank Details",
+                                subtitle: [
+                                    "Displays the bank details for each bank transaction.",
+                                ],
+                                img: [
+                                    {
+                                        imagePath: "bank-details.png",
+                                        width: "100%",
+                                    },
+                                ],
+                                video: [],
+                            },
+                            {
+                                title: "Performance optimisation",
+                                subtitle: [
+                                    "I implemented pagination to only show 10 banks at a time to improve performance.",
+                                    "I also used Redux to store the bank data so that the data is only fetched once and can be accessed from any page.",
+                                    "The filters are only applied when the search button is clicked to reduce the number of expensive operations.",
+                                ],
+                                img: [],
+                                video: [],
+                            }
+                        ]}
+                    />
+                ),
+            }
+        },
+        {
             title: "Party Website",
             subtitle:
                 "A website built with Flask and MySQL with authentication and CRUD functionality to allow users to create and join parties.",
@@ -339,42 +408,42 @@ function Projects() {
                 ),
             },
         },
-        {
-            title: "YouTube Downloader",
-            subtitle:
-                "A simple Python app that helps you download videos from YouTube built with Tkinter.",
-            img: "youtube-icon.png",
-            modalContent: {
-                title: "YouTube Downloader",
-                link: "https://github.com/matochichap/youtube-downloader",
-                content: (
-                    <ModalContent
-                        directory="youtube-downloader"
-                        skills={["Python", "Tkinter"]}
-                        comments={[
-                            "This was a really simple project that I created so that I did not have to watch ads to download YouTube videos from shady websites.",
-                            "I put these types of projects in because while they were simple, they were really useful tools that I ended up using.",
-                        ]}
-                        features={[
-                            {
-                                title: "Download videos",
-                                subtitle: [
-                                    "I spent way too much time trying to make the UI look decent.",
-                                    "You just need to put in the link and file path to search for the file to download, then choose the video resolution to download.",
-                                ],
-                                img: [
-                                    {
-                                        imagePath: "youtube-downloader.png",
-                                        width: "90%",
-                                    },
-                                ],
-                                video: [],
-                            },
-                        ]}
-                    />
-                ),
-            },
-        },
+        // {
+        //     title: "YouTube Downloader",
+        //     subtitle:
+        //         "A simple Python app that helps you download videos from YouTube built with Tkinter.",
+        //     img: "youtube-icon.png",
+        //     modalContent: {
+        //         title: "YouTube Downloader",
+        //         link: "https://github.com/matochichap/youtube-downloader",
+        //         content: (
+        //             <ModalContent
+        //                 directory="youtube-downloader"
+        //                 skills={["Python", "Tkinter"]}
+        //                 comments={[
+        //                     "This was a really simple project that I created so that I did not have to watch ads to download YouTube videos from shady websites.",
+        //                     "I put these types of projects in because while they were simple, they were really useful tools that I ended up using.",
+        //                 ]}
+        //                 features={[
+        //                     {
+        //                         title: "Download videos",
+        //                         subtitle: [
+        //                             "I spent way too much time trying to make the UI look decent.",
+        //                             "You just need to put in the link and file path to search for the file to download, then choose the video resolution to download.",
+        //                         ],
+        //                         img: [
+        //                             {
+        //                                 imagePath: "youtube-downloader.png",
+        //                                 width: "90%",
+        //                             },
+        //                         ],
+        //                         video: [],
+        //                     },
+        //                 ]}
+        //             />
+        //         ),
+        //     },
+        // },
         // {
         //     title: "Queue App API",
         //     subtitle:
