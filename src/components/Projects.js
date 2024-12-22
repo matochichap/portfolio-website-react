@@ -232,7 +232,7 @@ function Projects() {
                         directory="fake-bank"
                         skills={["NextJS", "TailwindCSS", "Typescript", "Redux"]}
                         comments={[
-                            "In this project, I learnt more on Redux and state management and figuring out how to optimise performance.",
+                            "In this project, I learnt more on Redux and state management and figuring out how to optimise for performance.",
                         ]}
                         features={[
                             {
@@ -277,9 +277,9 @@ function Projects() {
                             {
                                 title: "Performance optimisation",
                                 subtitle: [
-                                    "I implemented pagination to only show 10 banks at a time to improve performance.",
-                                    "I also used Redux to store the bank data so that the data is only fetched once and can be accessed from any page.",
-                                    "The filters are only applied when the search button is clicked to reduce the number of expensive operations.",
+                                    "Pagination: to show 10 transactions at a time.",
+                                    "Redux: to store bank data state to limit number of fetches and to sort and filter.",
+                                    "Search button: to apply filters instead of applying filters on every change.",
                                 ],
                                 img: [],
                                 video: [],
