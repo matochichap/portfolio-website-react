@@ -250,7 +250,7 @@ function Experiences() {
             },
         },
         {
-            title: "Software Engineer",
+            title: "XR Software Engineer",
             companyName: "Smart Systems Institute, Singapore",
             descriptions: [
                 "Smart Systems Institute (SSI) is a research institute at the National University of Singapore (NUS) that focuses on developing innovative solutions for smart systems and technologies.",
