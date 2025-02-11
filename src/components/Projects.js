@@ -226,7 +226,7 @@ function Projects() {
             img: "fake-bank-icon.png",
             modalContent: {
                 title: "FakeBank",
-                link: "https://frontend-bank-list.vercel.app/bank",
+                link: "https://fake-bank-transactions.vercel.app/bank",
                 content: (
                     <ModalContent
                         directory="fake-bank"
