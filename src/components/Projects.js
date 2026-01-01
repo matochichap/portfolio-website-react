@@ -60,6 +60,12 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                                     modalOpen ? close() : open(index)
                                 }
                             ></i>
+                            <a
+                                className="fa-solid fa-link fa-icon project-flip-icon"
+                                href={`${project.link}`}
+                                style={{textDecoration: 'none'}}
+                            >
+                            </a>
                             <i
                                 className="fa-solid fa-repeat project-flip-icon fa-icon"
                                 ref={projectFrontFlipBtnRef}
@@ -71,15 +77,6 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                     <div className="project-card-back-inner">
                         <p className="project-subtitle">{project.subtitle}</p>
                         <div className="project-buttons">
-                            {/* <a
-                                className="project-link"
-                                href={`${project.link}`}
-                            >
-                                <i
-                                    className="fa-solid fa-link fa-icon"
-                                    style={{ scale: "90%" }}
-                                ></i>
-                            </a> */}
                             <div
                                 className="project-modal"
                                 onClick={() =>
@@ -87,6 +84,14 @@ function ProjectCard({ project, modalOpen, open, close, index }) {
                                 }
                             >
                                 <i className="fa-regular fa-lightbulb fa-icon-highlight"></i>
+                            </div>
+                            <div className="project-flip-icon-back-box">
+                                <a
+                                    className="fa-solid fa-link fa-icon"
+                                    href={`${project.link}`}
+                                    style={{textDecoration: 'none'}}
+                                >
+                                </a>
                             </div>
                             <div
                                 className="project-flip-icon-back-box"
@@ -109,6 +114,7 @@ function Projects() {
             subtitle:
                 "A full stack web app that optimally matches ads to moderators, enhancing efficiency with violation flagging and text categorisation.",
             img: "tiktok-icon.png",
+            link: "https://devpost.com/software/igmoid-masterchefs",
             modalContent: {
                 title: "TikTok Ad Moderation",
                 link: "https://devpost.com/software/igmoid-masterchefs",
@@ -118,7 +124,6 @@ function Projects() {
                         skills={["Flask", "React", "Python", "MaterialUI"]}
                         comments={[
                             "This project was for the TikTok Hackathon Challenge 2023 which won 1st place and I mainly worked on the full stack web app to showcase our allocation models.",
-                            "This was a really interesting project to work on as it was the first ML project I worked on and it gave me some ideas for future ML projects.",
                         ]}
                         features={[
                             {
@@ -157,64 +162,94 @@ function Projects() {
             },
         },
         {
-            title: "PortFlow",
+            title: "AlgoBuddy",
             subtitle:
-                "A full stack web app to automate combining different orders to the same shipments using machine learning.",
-            img: "portflow-icon.png",
+                "A web application for practicing coding questions with others in real time.",
+            img: "algobuddy-icon.png",
+            link: "https://algobuddy.chanruijia.com",
             modalContent: {
-                title: "PortFlow",
-                link: "https://matochichap.github.io/PSA_CodeSprint/",
+                title: "AlgoBuddy",
+                link: "https://algobuddy.chanruijia.com",
                 content: (
                     <ModalContent
-                        directory="portflow"
-                        skills={["Flask", "React", "Python", "Gurobi"]}
-                        comments={[
-                            "This project was for the PSA Hackathon 2023 where I worked mostly on the backend to combine the different orders using our allocation model.",
-                        ]}
+                        directory="algobuddy"
+                        skills={["NextJS", "Node", "Express", "Socket.io", "MongoDB", "Prisma", "Redis", "Docker", "GCP"]}
+                        comments={[]}
                         features={[
                             {
-                                title: "Assign orders",
+                                title: "Architecture",
                                 subtitle: [
-                                    "You can select the orders to combine which will update the incoming and outgoing shipments.",
+                                    "The API gateway serves as the entrypoint for the entire application, including the UI. The UI had to be placed behind the API gateway so that cookies could be set from the same origin(API gateway) for iOS devices which had stricter cookie policies. There were definitely better ways to overcome this, like adding a load balancer but this would add to deployment cost.",
+                                    "Scalability was a key consideration, hence an orchestrator pattern was used. UI would call the various microservices in the correct order without requiring microservices from communicating. However, if the application was more complex, asynchronous communication facilitated by a message broker might be more appropriate.",
                                 ],
                                 img: [
                                     {
-                                        imagePath: "pending-orders.png",
+                                        imagePath: "algobuddy-architecture.png",
                                         width: "100%",
                                     },
                                 ],
                                 video: [],
                             },
                             {
-                                title: "Incoming and Outgoing shipments",
+                                title: "Cloud Deployment",
                                 subtitle: [
-                                    "Pages to show all the incoming and outgoing shipments.",
+                                    "GCP was used for deployment. Each microservice was containerised and deployed independently on Cloud Run. Only the API gateway is accessible to the public and all other containers are private. Direct VPC was used to allow the API gateway to communicate with the other microservices."
+                                ],
+                                img: [],
+                                video: [],
+                            },
+                            {
+                                title: "Continuous Deployment",
+                                subtitle: [
+                                    "A Cloud Build trigger is set for each microservice so that when a change on a microservice is pushed to the repo, it will trigger a new build and deployment.",
+                                ],
+                                img: [],
+                                video: [],
+                            },
+                            {
+                                title: "User Service",
+                                subtitle: [
+                                    "This microservice is responsible for handling user data and authentication.",
+                                    "Google OAuth 2.0 was used for authentication to simplify the login process and improve security.",
+                                    "JWTs were used for session management to allow stateless authentication across microservices.",
+                                    "Refresh tokens are stored in Redis and set to expire after some time."
+                                ],
+                                img: [],
+                                video: [],
+                            },
+                            {
+                                title: "Matching Service",
+                                subtitle: [
+                                    "This microservice is responsible for matching users based on their selected criteria.",
+                                    "Suppose John and Jane choose the criteria as illustrated. They get added to their respective queue(criteria queue). Given the criteria, all the possible combinations that can be matched to that criteria are generated and combined(candidate queue). Users from the candidate queues are matched against the criteria queue. If the candidate queue has been emptied, users in the criteria queue are matched.",
+                                    "A TTL expiry is set for each user so that if the user has not been matched after some time, a TTL expiry event will fire which will clear the user info, remove them from the queue and notify the user."
                                 ],
                                 img: [
                                     {
-                                        imagePath: "incoming-shipments.png",
-                                        width: "100%",
-                                    },
-                                    {
-                                        imagePath: "outgoing-shipments.png",
+                                        imagePath: "algobuddy-matching-algorithm.png",
                                         width: "100%",
                                     },
                                 ],
                                 video: [],
                             },
                             {
-                                title: "View shipment details",
+                                title: "Question Service",
                                 subtitle: [
-                                    "Page to show the shipment details when you click on a shipment in the incoming/outgoing shipments page.",
+                                    "This microservice is responsible for handling coding questions data.",
                                 ],
-                                img: [
-                                    {
-                                        imagePath: "shipment-details.png",
-                                        width: "100%",
-                                    },
-                                ],
+                                img: [],
                                 video: [],
                             },
+                            {
+                                title: "Collaboration Service",
+                                subtitle: [
+                                    "This microservice is responsible for allowing real time collaboration on a coding problem between two peers.",
+                                    "Socket.io was used for room management, real time messaging and shared codespace.",
+                                    "Yjs was used to merge the conflicts between the shared codespace"
+                                ],
+                                img: [],
+                                video: [],
+                            }
                         ]}
                     />
                 ),
@@ -224,9 +259,10 @@ function Projects() {
             title: "FakeBank",
             subtitle: "A frontend web app to simulate bank transactions built with NextJS, TailwindCSS, Typescript and Redux.",
             img: "fake-bank-icon.png",
+            link: "https://fakebank.chanruijia.com",
             modalContent: {
                 title: "FakeBank",
-                link: "https://fake-bank-transactions.vercel.app/bank",
+                link: "https://fakebank.chanruijia.com",
                 content: (
                     <ModalContent
                         directory="fake-bank"
@@ -290,57 +326,60 @@ function Projects() {
             }
         },
         {
-            title: "Party Website",
+            title: "PortFlow",
             subtitle:
-                "A website built with Flask and MySQL with authentication and CRUD functionality to allow users to create and join parties.",
-            img: "party-icon.png",
+                "A full stack web app to automate combining different orders to the same shipments using machine learning.",
+            img: "portflow-icon.png",
+            link: "https://matochichap.github.io/PSA_CodeSprint/",
             modalContent: {
-                title: "Party Website",
-                link: "https://github.com/matochichap/party-website",
+                title: "PortFlow",
+                link: "https://matochichap.github.io/PSA_CodeSprint/",
                 content: (
                     <ModalContent
-                        directory="party-website"
-                        skills={["Flask", "SQLAlchemy", "HTML", "CSS"]}
+                        directory="portflow"
+                        skills={["Flask", "React", "Python", "Gurobi"]}
                         comments={[
-                            "This was actually an assignment for an internship application.",
-                            "I was really happy with how it turned out since I was able to implement user authentication, CRUD functionality and also make the UI look pretty good given a tight deadline.",
+                            "This project was for the PSA Hackathon 2023 where I worked mostly on the backend to combine the different orders using our allocation model.",
                         ]}
                         features={[
                             {
-                                title: "User authentication",
+                                title: "Assign orders",
                                 subtitle: [
-                                    "Simple login and register page to create and manage users' profiles.",
+                                    "You can select the orders to combine which will update the incoming and outgoing shipments.",
                                 ],
                                 img: [
                                     {
-                                        imagePath: "login.png",
+                                        imagePath: "pending-orders.png",
                                         width: "100%",
                                     },
                                 ],
                                 video: [],
                             },
                             {
-                                title: "Main page",
+                                title: "Incoming and Outgoing shipments",
                                 subtitle: [
-                                    "Creators of parties are able to remove members from their parties and edit and delete the party.",
-                                    "Users can join and leave other people's parties.",
+                                    "Pages to show all the incoming and outgoing shipments.",
                                 ],
                                 img: [
                                     {
-                                        imagePath: "parties.png",
+                                        imagePath: "incoming-shipments.png",
+                                        width: "100%",
+                                    },
+                                    {
+                                        imagePath: "outgoing-shipments.png",
                                         width: "100%",
                                     },
                                 ],
                                 video: [],
                             },
                             {
-                                title: "Create/Update party",
+                                title: "View shipment details",
                                 subtitle: [
-                                    "Page dynamically changes depending on whether the user wants to create or edit a party.",
+                                    "Page to show the shipment details when you click on a shipment in the incoming/outgoing shipments page.",
                                 ],
                                 img: [
                                     {
-                                        imagePath: "create-party.png",
+                                        imagePath: "shipment-details.png",
                                         width: "100%",
                                     },
                                 ],
@@ -356,6 +395,7 @@ function Projects() {
             subtitle:
                 "A bot built with Selenium to helps you automate adding all your watch history into another profile.",
             img: "netflix-icon.png",
+            link: "https://github.com/matochichap/transfer-netflix-profile",
             modalContent: {
                 title: "Transfer Netflix profile",
                 link: "https://github.com/matochichap/transfer-netflix-profile",
@@ -489,6 +529,7 @@ function Projects() {
             subtitle:
                 "Crossy Road but with turtles built with Python and Turtle graphics that gets harder as you clear more levels.",
             img: "turtle-crossing-icon.png",
+            link: "https://github.com/matochichap/turtle-crossing",
             modalContent: {
                 title: "Turtle Crossing",
                 link: "https://github.com/matochichap/turtle-crossing",

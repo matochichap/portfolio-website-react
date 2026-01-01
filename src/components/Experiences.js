@@ -158,11 +158,70 @@ function ExperienceCard({ experience, modalOpen, open, close, index }) {
 function Experiences() {
     const allExperiences = [
         {
+            title: "Software Engineer",
+            companyName: "Visa, Singapore",
+            descriptions: [
+                "Visa is a global payments technology company that connects consumers, businesses, banks, and governments to fast, secure, and reliable electronic payments.",
+                "I worked on MCP agents to improve the efficiency of internal processes and enhance the user experience for Visa employees.",
+            ],
+            img: "./resources/images/experience-images/visa-thumbnail.png",
+            skills: [
+                "Java",
+                "Python",
+                "MCP",
+                "FastAPI",
+                "SpringBoot",
+            ],
+            modalContent: {
+                title: "Visa",
+                link: "https://www.visa.com",
+                content: (
+                    <ModalContent
+                        directory="visa"
+                        skills={[]}
+                        comments={[]}
+                        features={[
+                            {
+                                title: "MCP Agent Workflow",
+                                subtitle: [
+                                    "The following outlines the AI workflow. A key part is the orchestrator, where it decides the MCP tool to call and the arguments to be supplied to the MCP tools.",
+                                ],
+                                img: [
+                                    {
+                                        imagePath: "visa-agent-workflow.png",
+                                        width: "100%",
+                                    },
+                                ],
+                                video: [],
+                            },
+                            {
+                                title: "Tool Chaining",
+                                subtitle: [
+                                    "I added functionality to the orchestrator to allow multiple tools to be called at each step, until the query has been fulfilled.",
+                                    "This improved the maintainability of MCP tools and allowed more complex queries to be handled.",
+                                    "In the example, the agent understands the query and calls one or more tools. At each step, the agent evaluates the response and decides whether to call more tools or return the final response.",
+                                ],
+                                img: [
+                                    {
+                                        imagePath: "visa-tool-chaining.png",
+                                        width: "100%",
+                                    },
+                                ],
+                                video: [
+                                ],
+                            }
+                        ]}
+                    />
+                )
+            }
+
+        },
+        {
             title: "Full Stack Developer",
             companyName: "Leasi, Norway",
             descriptions: [
-                "Leasi is a company focused on providing comprehensive management solutions for the construction industry, particularly in optimizing machinery and equipment fleets.",
-                "Leasi's SaaS platform offers a centralized system for fleet control, allowing contractors and rental companies to gain visibility, streamline operations, and improve sustainability by better utilizing both owned and rented equipment.",
+                "Leasi offers a centralized system for fleet control, allowing contractors and construction companies to streamline operations.",
+                "I worked on development of the platform, during my 6 month internship under the NUS NOC program."
             ],
             img: "./resources/images/experience-images/leasi-thumbnail.png",
             skills: [
@@ -253,9 +312,8 @@ function Experiences() {
             title: "XR Software Engineer",
             companyName: "Smart Systems Institute, Singapore",
             descriptions: [
-                "Smart Systems Institute (SSI) is a research institute at the National University of Singapore (NUS) that focuses on developing innovative solutions for smart systems and technologies.",
+                "Smart Systems Institute is a research institute at NUS that focuses on developing innovative solutions for smart systems and technologies.",
                 "I worked on a project called RobiButler, which aims to enable remote users to interact with a robot assistant through XR technologies.",
-                "Leveraging advanced communication interfaces and large language models (LLMs), RobiButler interprets these inputs to perform various household tasks, such as monitoring the robot's status, executing instructions, and selecting target objects via hand pointing.",
             ],
             img: "./resources/images/experience-images/ssi-thumbnail.png",
             skills: [
@@ -329,9 +387,8 @@ function Experiences() {
             title: "Software Engineer",
             companyName: "Qritive, Singapore",
             descriptions: [
-                "Qritive is a healthcare technology company specialising in AI solutions for pathology.",
-                "Their AI-powered platform assists pathologists in diagnosing diseases by analyzing medical images.",
-                "Qritive's technology aims to streamline pathology workflows and improve patient outcomes through advanced image analysis and data integration.",
+                "Qritive assists pathologists in diagnosing diseases by analyzing medical images with AI solutions.",
+                "I worked on integrating medical imaging APIs and creating data visualizations for the platform.",
             ],
             img: "./resources/images/experience-images/qritive-thumbnail.png",
             skills: [
@@ -409,7 +466,7 @@ function Experiences() {
             companyName: "Whatnot Startup Studio, Thailand",
             descriptions: [
                 "Whatnot Startup Studio is a startup studio that helps entrepreneurs build their ideas into successful businesses.",
-                "Whatnot partnered with another startup, Blockchain Labs, to collaborate on a project called Aira, a LINE AI job matching chatbot to help job seekers find jobs more easily.",
+                "I worked on Aira, a LINE AI job matching chatbot to help job seekers find jobs more easily.",
             ],
             img: "./resources/images/experience-images/whatnot-thumbnail.png",
             skills: [
